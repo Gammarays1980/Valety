@@ -3,30 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valety | AI-Powered Engineering Validation</title>
+    <title>Valety | AI Engineering Compliance</title>
     <style>
         body { background-color: #0f172a; color: #cbd5e1; font-family: sans-serif; margin: 0; line-height: 1.4; }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; text-align: center; }
-        h1 { font-size: 2.5rem; color: #ffffff; margin-bottom: 10px; letter-spacing: -1px; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; text-align: center; }
+        
+        /* Top Navigation Bar */
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 40px; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #fff; letter-spacing: 1px; }
+        .download-link { color: #60a5fa; text-decoration: none; font-weight: bold; font-size: 0.9rem; border: 1px solid #3b82f6; padding: 8px 16px; border-radius: 6px; }
+        .download-link:hover { background: rgba(59, 130, 246, 0.1); }
+
+        /* Typography */
+        h1 { font-size: 2.8rem; color: #ffffff; margin-bottom: 10px; letter-spacing: -1px; }
         .highlight { color: #3b82f6; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 25px; }
-        .card { background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); text-align: left; font-size: 0.9rem; }
-        .card h3 { color: #fff; margin: 0 0 8px 0; font-size: 1rem; }
-        .promo-box { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); padding: 25px; border-radius: 20px; margin-top: 30px; border: 1px solid #3b82f6; }
-        .btn-email { background: #ffffff; color: #1e3a8a; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px; transition: transform 0.2s; }
-        .btn-email:hover { transform: scale(1.05); }
-        header { padding: 40px 0 20px 0; }
-        ul { list-style: none; padding: 0; margin: 0; text-align: left; display: inline-block; }
-        li { margin-bottom: 5px; }
+        
+        /* Grid Layout (5 cards) */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-top: 30px; }
+        .card { background: rgba(255, 255, 255, 0.05); padding: 20px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); text-align: left; font-size: 0.85rem; }
+        .card h3 { color: #fff; margin: 0 0 8px 0; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+        
+        /* Promo Section */
+        .promo-box { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); padding: 30px; border-radius: 20px; margin-top: 35px; border: 1px solid #3b82f6; }
+        .btn-email { background: #ffffff; color: #1e3a8a; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px; }
+        
+        header { padding: 20px 0; }
     </style>
 </head>
 <body>
 
+    <nav>
+        <div class="logo">VALETY</div>
+        <a href="VALETY_INSTALLER.exe" class="download-link">Download Valety .exe</a>
+    </nav>
+
     <div class="container">
         <header>
-            <div style="text-transform: uppercase; color: #60a5fa; font-weight: bold; letter-spacing: 2px; font-size: 0.8rem; margin-bottom: 10px;">Engineering Compliance Automation</div>
+            <div style="text-transform: uppercase; color: #60a5fa; font-weight: bold; letter-spacing: 2px; font-size: 0.75rem; margin-bottom: 10px;">
+                AI Engineering Compliance & Retrieval Automation
+            </div>
             <h1>Stop Manual Cross-Checking. <br><span class="highlight">Validate Instantly.</span></h1>
-            <p style="font-size: 1.1rem; max-width: 650px; margin: 0 auto; opacity: 0.9;">
+            <p style="max-width: 700px; margin: 0 auto; opacity: 0.9;">
                 Let AI validate your work against standards, codes, and documents with full traceability and maximum privacy.
             </p>
         </header>
@@ -34,32 +51,36 @@
         <div class="grid">
             <div class="card">
                 <h3>🧠 One Instruction</h3>
-                <p>Send a message via Telegram and get a full validation report in seconds[cite: 12, 17].</p>
+                <p>Send a message via Telegram and get a full validation report in seconds.</p>
             </div>
             <div class="card">
-                <h3>📂 Native File Support</h3>
-                <p>Directly reads CAD, Revit, PDFs, Excel, and Office docs—no upload hassle[cite: 15].</p>
+                <h3>💬 Document Chat</h3>
+                <p>Ask any question and get immediate, traceable answers directly from your project documents.</p>
+            </div>
+            <div class="card">
+                <h3>📂 Native Files</h3>
+                <p>Directly reads CAD, Revit, PDFs, Excel, and Office docs—no upload hassle.</p>
             </div>
             <div class="card">
                 <h3>✅ Exact Citations</h3>
-                <p>Flags gaps, exclusions, and misplaced responsibilities with traceable excerpts[cite: 11, 45].</p>
+                <p>Flags gaps, exclusions, and misplaced responsibilities with traceable excerpts.</p>
             </div>
             <div class="card">
                 <h3>🔒 Self-Hosted</h3>
-                <p>Max privacy. Your data stays within your infrastructure and never leaves[cite: 15, 80].</p>
+                <p>Maximum privacy. Your data stays within your infrastructure and never leaves.</p>
             </div>
         </div>
 
         <div class="promo-box">
             <h2 style="color: #fff; margin: 0; font-size: 1.8rem;">Get 1 Month Free</h2>
-            <p style="margin: 10px 0; opacity: 0.9;">Limited time offer for engineering consultants and project teams.</p>
+            <p style="margin: 10px 0; opacity: 0.9;">Send an email now to activate your trial.</p>
             <a href="mailto:valety.subscription@gmail.com?subject=One%20Month%20Free%20Trial" class="btn-email">
-                Send Email to valety.subscription@gmail.com
+                valety.subscription@gmail.com
             </a>
-            <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.7;">Build for consultants, by engineers. Available 24/7[cite: 12].</p>
+            <p style="font-size: 0.8rem; margin-top: 15px; opacity: 0.8;">Built for engineers, by engineers. Available 24/7.</p>
         </div>
 
-        <footer style="margin-top: 40px; padding-bottom: 20px; font-size: 0.7rem; opacity: 0.5; letter-spacing: 1px;">
+        <footer style="margin-top: 40px; padding-bottom: 20px; font-size: 0.7rem; opacity: 0.4; letter-spacing: 1px;">
             © 2026 VALETY | AUTOMATED ENGINEERING ASSISTANT
         </footer>
     </div>
