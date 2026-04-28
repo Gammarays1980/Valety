@@ -3,74 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valety | AI-Powered Engineering Audit</title>
+    <title>Valety | AI Engineering Audit</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        body { background-color: #0f172a; }
+        body { background-color: #0f172a; margin: 0; }
         .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
     </style>
 </head>
-<body class="text-slate-200 font-sans leading-relaxed">
-
+<body class="text-slate-200 font-sans">
     <nav class="p-6 flex justify-between items-center max-w-6xl mx-auto">
         <div class="text-2xl font-bold bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">VALETY</div>
         <div class="hidden md:flex gap-8 text-sm font-medium opacity-70">
-            <a href="#features" class="hover:text-blue-400 transition">Features</a>
-            <a href="#security" class="hover:text-blue-400 transition">Security</a>
-            <a href="mailto:amr.elfar@bravo-ds.com" class="hover:text-blue-400 transition">Partnership</a>
+            <a href="mailto:amr.elfar@bravo-ds.com" class="hover:text-blue-400">Partnership</a>
         </div>
     </nav>
-
     <header class="py-24 px-6 text-center">
-        <div class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest text-blue-400 uppercase bg-blue-400/10 border border-blue-400/20 rounded-full">
-            Enterprise Grade AI
-        </div>
-        <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">
-            Stop <span class="text-blue-500">Scope-Bleed</span> <br>Before It Starts.
-        </h1>
-        <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10">
-            Automated technical audits for Engineering Proposals. Validate RFPs vs. Deliverables instantly via our <b>Zero-UI Telegram interface</b>.
-        </p>
+        <div class="inline-block px-4 py-1.5 mb-6 text-xs font-semibold tracking-widest text-blue-400 uppercase bg-blue-400/10 border border-blue-400/20 rounded-full">Enterprise Grade AI</div>
+        <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 tracking-tight">Stop <span class="text-blue-500">Scope-Bleed</span>.</h1>
+        <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-10">Automated technical audits for Engineering Proposals. Validate RFPs vs. Deliverables via <b>Telegram</b>.</p>
         <div class="flex flex-col md:flex-row justify-center gap-4">
-            <a href="VALETY_INSTALLER.exe" class="bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-xl font-bold shadow-lg shadow-blue-900/20 transition-all flex items-center justify-center">
-                Download Service (.exe)
-            </a>
-            <a href="https://t.me/your_bot_link" class="glass text-white px-10 py-4 rounded-xl font-bold hover:bg-white/5 transition-all flex items-center justify-center">
-                Try on Telegram
-            </a>
+            <a href="VALETY_INSTALLER.exe" class="bg-blue-600 hover:bg-blue-500 text-white px-10 py-4 rounded-xl font-bold transition-all">Download Service (.exe)</a>
+            <a href="https://t.me/your_bot_link" class="glass text-white px-10 py-4 rounded-xl font-bold hover:bg-white/5 transition-all">Try on Telegram</a>
         </div>
-        <p class="mt-4 text-xs text-slate-500 font-mono">v1.0.0 | Windows 10/11 x64 | Standalone Service</p>
     </header>
-
-    <section id="features" class="py-20 max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+    <section class="py-20 max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-8">
         <div class="glass p-8 rounded-2xl">
-            <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mb-6 text-blue-400">⚡</div>
-            <h3 class="text-xl font-bold text-white mb-3">Zero-UI Workflow</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">No new software to learn. Simply forward documents to the Valety Bot and receive professional audit reports in seconds.</p>
+            <h3 class="text-xl font-bold text-white mb-3">Zero-UI</h3>
+            <p class="text-slate-400 text-sm">No software to learn. Simply Telegram a document for an instant audit.</p>
         </div>
         <div class="glass p-8 rounded-2xl">
-            <div class="w-12 h-12 bg-emerald-500/20 rounded-lg flex items-center justify-center mb-6 text-emerald-400">🛡️</div>
             <h3 class="text-xl font-bold text-white mb-3">Local Security</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">Standalone installation. All processing happens within your firm’s infrastructure. Your IP never hits a public cloud.</p>
+            <p class="text-slate-400 text-sm">Standalone service. Your IP stays within your firm’s infrastructure.</p>
         </div>
         <div class="glass p-8 rounded-2xl">
-            <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mb-6 text-purple-400">📑</div>
-            <h3 class="text-xl font-bold text-white mb-3">100% Traceability</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">Every finding is linked to the exact page and paragraph. Built for Engineering Consultants who demand accuracy.</p>
+            <h3 class="text-xl font-bold text-white mb-3">Traceability</h3>
+            <p class="text-slate-400 text-sm">Every finding links to exact pages and paragraphs in your source documents.</p>
         </div>
     </section>
-
-    <section class="py-20 px-6">
-        <div class="max-w-4xl mx-auto glass p-12 rounded-3xl text-center border-blue-500/30">
-            <h2 class="text-3xl font-bold text-white mb-4">Are you an AEC Consultant?</h2>
-            <p class="text-slate-400 mb-8">Join our referral broker program. Earn <b>20% commission</b> by helping firms protect their margins with Valety.</p>
-            <a href="mailto:amr.elfar@bravo-ds.com" class="text-blue-400 font-bold hover:text-blue-300">Contact Partner Relations →</a>
-        </div>
-    </section>
-
-    <footer class="py-10 text-center text-slate-600 text-xs tracking-widest uppercase">
-        © 2026 VALETY BY AMR ELFAR | BRAVO HOSPITALITY SOLUTIONS
+    <footer class="py-20 text-center text-slate-600 text-xs tracking-widest uppercase border-t border-white/5">
+        © 2026 VALETY | VALETY AI
     </footer>
-
 </body>
 </html>
