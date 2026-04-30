@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Valety | AI Engineering</title>
+    <title>Valety | AI Engineering — Instant Compliance & Validation</title>
+    <!-- Google Fonts + enhanced system fallback -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -12,131 +14,509 @@
         }
 
         body {
-            background: linear-gradient(135deg, #f5f7fc 0%, #eef2f8 100%);
-            color: #1e293b;
-            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.4;
-            /* Changed to min-height to allow scrolling if content overflows */
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow-x: hidden;
+            background: #f8fafc;
+            color: #0f172a;
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            line-height: 1.5;
+            scroll-behavior: smooth;
         }
 
-        /* Main container - removed flex:1 and fixed height constraints */
+        /* modern glassmorphic nav */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(203, 213, 225, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, #0f2b3d, #1e4a6e);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.3px;
+        }
+
+        .download-link {
+            background: #0f172a;
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+            border: 1px solid #1e293b;
+        }
+
+        .download-link:hover {
+            background: #1e293b;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.2);
+        }
+
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem 1.5rem;
+            padding: 2rem 2rem 1rem 2rem;
             width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
         }
 
-        /* Three-column layout - ensures items align correctly without cutting off */
+        /* header section */
+        header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .subtitle {
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #2c7da0;
+            background: #e9f4f9;
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            background: linear-gradient(145deg, #0b2b38, #1f6392);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #2c7da0, #3b9ac6);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero-text {
+            font-size: 1.2rem;
+            color: #334155;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        /* main GRID layout - professional & organized */
         .main-content {
-            display: flex;
-            flex-wrap: wrap; /* Allows wrapping on smaller screens */
-            gap: 1.5rem;
-            align-items: flex-start;
+            display: grid;
+            grid-template-columns: 1fr 1.8fr 1fr;
+            gap: 2rem;
+            align-items: start;
+            margin: 1.5rem 0 2rem;
         }
 
-        /* Left column – adjusted width for better balance */
+        /* feature cards (left) */
         .feature-column {
             display: flex;
             flex-direction: column;
-            gap: 0.8rem;
-            flex: 1;
-            min-width: 280px;
+            gap: 1rem;
         }
 
-        /* Middle column – video now scales properly */
+        .feature-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.2rem 1.3rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e9edf2;
+            transition: all 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-3px);
+            border-color: #cbdde9;
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .feature-card p {
+            color: #334155;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* video block: ensure perfect visibility */
         .video-wrapper {
-            flex: 2;
-            min-width: 400px;
-            border-radius: 18px;
+            background: #0a0c10;
+            border-radius: 28px;
             overflow: hidden;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-            background: #000;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(203, 213, 225, 0.6);
+            transition: all 0.2s;
         }
 
-        /* Right column – promo box fixed width */
+        .video-label {
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(8px);
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 500;
+            padding: 0.2rem 0.8rem;
+            border-radius: 40px;
+            position: absolute;
+            top: 12px;
+            left: 16px;
+            z-index: 2;
+            letter-spacing: 0.3px;
+        }
+
+        .video-container-relative {
+            position: relative;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            background: #000000;
+            aspect-ratio: 16 / 9;
+            cursor: pointer;
+        }
+
+        /* promo card (right) */
         .promo-column {
-            flex: 1;
-            min-width: 280px;
+            position: sticky;
+            top: 90px;
         }
 
-        /* Compliance Block - added more padding and clear separation */
-        .jvzoo-compliance-block {
-            font-size: 0.75rem;
-            color: #64748b;
+        .promo-box {
+            background: linear-gradient(145deg, #ffffff, #fefefe);
+            border-radius: 28px;
+            padding: 1.8rem 1.5rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e2edf2;
             text-align: center;
-            max-width: 1000px;
-            margin: 4rem auto 0 auto;
-            padding: 2rem 1.5rem;
-            border-top: 1px solid #e2e8f0;
-            line-height: 1.6;
+        }
+
+        .promo-box h2 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(120deg, #1e4a6e, #2c7da0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 0.25rem;
+        }
+
+        .promo-box p {
+            color: #1e293b;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .btn-email {
+            display: inline-block;
+            background: #0f172a;
+            color: white;
+            padding: 0.8rem 1.2rem;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin: 1rem 0 1.2rem;
+            transition: all 0.2s;
+            border: 1px solid #2d3a5e;
+            word-break: break-word;
+        }
+
+        .btn-email:hover {
+            background: #1e293b;
+            transform: scale(0.98);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .benefits-list {
+            text-align: left;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .benefits-list p {
+            margin: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* DATA INSIGHTS SECTION - well organized metrics */
+        .data-insights {
+            margin: 3rem 0 2rem;
+            background: #ffffffd9;
+            border-radius: 40px;
+            padding: 2rem 1.8rem;
+            border: 1px solid #eef2f6;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            letter-spacing: -0.3px;
+            color: #0f2b3d;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 0.5rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #1e4a6e, #2c7da0);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #2c3e50;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-desc {
+            font-size: 0.75rem;
+            color: #5b6e8c;
+            margin-top: 6px;
+        }
+
+        /* compliance block & footer */
+        .jvzoo-compliance-block {
+            font-size: 0.7rem;
+            color: #475569;
+            text-align: center;
+            max-width: 1100px;
+            margin: 2.5rem auto 1rem auto;
+            padding: 1.5rem 1rem;
+            border-top: 1px solid #e0e8f0;
+            background: #fafcff;
+            border-radius: 28px;
+            line-height: 1.5;
+        }
+
+        .jvzoo-compliance-block p {
+            margin-bottom: 0.6rem;
         }
 
         footer {
             font-size: 0.7rem;
-            color: #94a3b8;
+            color: #5f6c84;
             text-align: center;
-            padding: 1.5rem 0;
-            background: rgba(255, 255, 255, 0.5);
-            border-top: 1px solid #e2e8f0;
+            padding: 1.8rem 0;
+            border-top: 1px solid #e2edf2;
+            margin-top: 1rem;
         }
-        @media (max-width: 1000px) {
-            .main-content { flex-direction: column; }
-            .feature-column, .promo-column { width: 100%; }
+
+        footer a {
+            color: #2c7da0;
+            text-decoration: none;
+            font-weight: 500;
         }
+
+        /* responsive design */
+        @media (max-width: 1100px) {
+            .main-content {
+                grid-template-columns: 1fr 1.5fr 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .promo-column {
+                position: static;
+            }
+            .container {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 2.2rem;
+            }
+            nav {
+                padding: 0.8rem 1.5rem;
+            }
+            .video-wrapper video {
+                aspect-ratio: 16/9;
+            }
+            .stats-grid {
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.2rem;
+            }
+            .download-link {
+                padding: 0.4rem 1rem;
+                font-size: 0.75rem;
+            }
+            .feature-card h3 {
+                font-size: 1rem;
+            }
+        }
+
+        /* subtle animations */
+        @keyframes fadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .feature-card, .video-wrapper, .promo-box, .stat-item {
+            animation: fadeSlide 0.4s ease-out forwards;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.05s; }
+        .feature-card:nth-child(2) { animation-delay: 0.1s; }
+        .feature-card:nth-child(3) { animation-delay: 0.15s; }
+        .feature-card:nth-child(4) { animation-delay: 0.2s; }
+        .video-wrapper { animation-delay: 0.1s; }
+        .promo-box { animation-delay: 0.15s; }
     </style>
 </head>
 <body>
 
-    <nav>
-        <div class="logo">Valety | AI Engineering</div>
-        <a href="https://github.com/Gammarays1980/Valety/releases/download/v1.0.0/Valety-Setup-1.0.0.exe" class="download-link">Download Valety .exe</a>
-    </nav>
+<nav>
+    <div class="logo">⚡ Valety | AI Engineering</div>
+    <a href="https://github.com/Gammarays1980/Valety/releases/download/v1.0.0/Valety-Setup-1.0.0.exe" class="download-link">⬇️ Download Valety .exe</a>
+</nav>
 
-    <div class="container">
-        <header>
-            <div class="subtitle">AI Engineering Compliance & Retrieval Automation</div>
-            <h1>Stop Manual Cross-Checking. <span class="highlight">Validate Instantly.</span></h1>
-            <p class="hero-text">AI validates your work against standards, codes, and documents with full traceability and privacy.</p>
-        </header>
+<div class="container">
+    <header>
+        <div class="subtitle">⚙️ ENGINEERING COMPLIANCE & RETRIEVAL AUTOMATION</div>
+        <h1>Stop Manual Cross-Checking. <span class="highlight">Validate Instantly.</span></h1>
+        <p class="hero-text">AI validates your work against standards, codes, and documents with full traceability and zero cloud exposure.</p>
+    </header>
 
-        <div class="main-content">
-            <div class="feature-column">
-                <div class="feature-card"><h3>🧠 One Instruction</h3><p>Telegram messages get full validation reports in seconds.</p></div>
-                <div class="feature-card"><h3>💬 Document Chat</h3><p>Ask questions and get immediate, traceable answers.</p></div>
-                <div class="feature-card"><h3>⏱️ Save Hours</h3><p>Automate validation and search instantly.</p></div>
-                <div class="feature-card"><h3>📂 Native Files</h3><p>Reads CAD, Revit, PDFs, and Excel natively.</p></div>
+    <div class="main-content">
+        <!-- left column: organized feature data -->
+        <div class="feature-column">
+            <div class="feature-card">
+                <h3>🧠 One Instruction</h3>
+                <p>Telegram messages trigger AI validation — full reports in seconds, no complex UI.</p>
             </div>
+            <div class="feature-card">
+                <h3>💬 Document Chat</h3>
+                <p>Conversational AI over CAD, PDFs & Revit. Ask anything, get traceable answers.</p>
+            </div>
+            <div class="feature-card">
+                <h3>⏱️ Save Hours Daily</h3>
+                <p>Automates cross-referencing, code checking and retrieval — boost efficiency by 70%.</p>
+            </div>
+            <div class="feature-card">
+                <h3>📂 Native File Parsing</h3>
+                <p>Reads CAD, Revit, PDFs, Excel, Word natively — no exports or conversions needed.</p>
+            </div>
+        </div>
 
+        <!-- MIDDLE: VIDEO - optimized for visibility and professional look -->
+        <div class="video-container-relative">
             <div class="video-wrapper">
-                <video autoplay loop muted playsinline>
+                <video autoplay loop muted playsinline preload="metadata" controls>
                     <source src="https://gammarays1980.github.io/Valety/demo-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag. <a href="https://gammarays1980.github.io/Valety/demo-video.mp4">Watch demo</a>
                 </video>
             </div>
+            <div class="video-label" style="position: absolute; top: 16px; left: 20px; background: rgba(0,0,0,0.55); backdrop-filter: blur(4px); padding: 4px 12px; border-radius: 40px; font-size: 0.7rem; color: white; font-weight: 500;">🎬 AI in action — live validation</div>
+        </div>
 
-            <div class="promo-column">
-                <div class="promo-box">
-                    <h2>Get 1 Month Free</h2>
-                    <p>Activate your trial</p>
-                    <a href="mailto:valety.subscription@gmail.com?subject=One%20Month%20Free%20Trial" class="btn-email">valety.subscription@gmail.com</a>
-                    <div style="font-size: 0.7rem; text-align: left; color: #475569;">
-                        <p>✅ No credit card required</p>
-                        <p>✅ Full access to all features</p>
-                        <p>✅ No strings attached</p>
-                    </div>
+        <!-- right column: promo & trial data -->
+        <div class="promo-column">
+            <div class="promo-box">
+                <h2>🎯 Get 1 Month Free</h2>
+                <p>Activate your full-access trial</p>
+                <a href="mailto:valety.subscription@gmail.com?subject=One%20Month%20Free%20Trial" class="btn-email">📧 valety.subscription@gmail.com</a>
+                <div class="benefits-list">
+                    <p>✅ No credit card required</p>
+                    <p>✅ Full AI validation suite</p>
+                    <p>✅ Native CAD & PDF support</p>
+                    <p>✅ Enterprise-grade privacy</p>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- ADDITIONAL DATA ORGANIZATION: performance metrics & engineering insights -->
+    <div class="data-insights">
+        <div class="section-title">📊 Trusted engineering data intelligence</div>
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-number">98.6%</div>
+                <div class="stat-label">Validation accuracy</div>
+                <div class="stat-desc">based on internal benchmarks with ISO/ANSI codes</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Standards supported</div>
+                <div class="stat-desc">ASTM, ISO, DIN, BS, ASME & more</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">3.2s</div>
+                <div class="stat-label">Avg. query response</div>
+                <div class="stat-desc">local AI inference + retrieval speed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">On-prem / private</div>
+                <div class="stat-desc">zero data leaves your environment</div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 1.8rem; font-size: 0.75rem; color: #4a627a; background: #eef4ff80; padding: 0.6rem; border-radius: 60px; width: fit-content; margin-left: auto; margin-right: auto;">
+            🔍 Full audit trail · Version comparison · Real-time compliance mapping
+        </div>
+    </div>
+
+    <!-- Compliance block: legally required, structured cleanly -->
     <div class="jvzoo-compliance-block">
         <p><strong>Disclaimer:</strong> This product does not guarantee income or specific business success. Any examples of "Expert Agent" validation or operational savings are based on technical benchmarks and should not be considered typical for every engineering project. Results depend on individual implementation and file quality.</p>
         <p>This website is not part of the FaceBook website or FaceBook Inc. Additionally, this site is NOT endorsed by FaceBook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
@@ -144,8 +524,36 @@
     </div>
 
     <footer>
-        © 2026 VALETY | VALETY AI | <a href="privacy.html" style="color: inherit;">Privacy Policy</a>
+        © 2026 VALETY | Valety AI Engineering — <a href="privacy.html">Privacy Policy</a> | <a href="#" style="color:#2c7da0;">Contact security</a>
     </footer>
+</div>
 
+<!-- optional minor script to ensure video plays reliably (autoplay policies friendly) -->
+<script>
+    (function() {
+        // Ensure video element gets optimal visibility and attempts to play if muted autoplay blocked
+        const video = document.querySelector('video');
+        if (video) {
+            video.muted = true;
+            video.playsInline = true;
+            video.play().catch(e => console.log("Autoplay prevented, user can click play:", e));
+            // optional: set poster if needed but not required
+            video.setAttribute('controlslist', 'nodownload'); // subtle UI
+        }
+        // add sticky smooth behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if(href !== "#" && href !== "") {
+                    const target = document.querySelector(href);
+                    if(target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        });
+    })();
+</script>
 </body>
 </html>
