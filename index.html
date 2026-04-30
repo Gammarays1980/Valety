@@ -33,29 +33,41 @@
             z-index: 100;
         }
 
-        .logo-wrapper {
-            display: flex;
-            flex-direction: column;
-            line-height: 1.2;
-        }
-
-        .logo {
-            font-weight: 800;
-            font-size: 1.5rem;
-            background: linear-gradient(135deg, #0f2b3d, #1e4a6e);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            letter-spacing: -0.3px;
-        }
-
-        .tagline {
-            font-size: 0.7rem;
-            font-weight: 500;
-            color: #4b6a8b;
-            letter-spacing: 0.2px;
-            margin-top: 2px;
-        }
+      .logo-wrapper {
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    align-items: baseline;
+    gap: 0.25rem;
+}
+.valety {
+    font-weight: 800;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #0f2b3d, #1e4a6e);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    white-space: nowrap;
+}
+.ai-group {
+    display: flex;
+    flex-direction: column;
+}
+.ai-eng {
+    font-weight: 800;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #0f2b3d, #1e4a6e);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    white-space: nowrap;
+}
+.tagline {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: #4b6a8b;
+    margin-top: -0.2rem;
+    white-space: nowrap;
+}
 
         .download-link {
             background: #0f172a;
@@ -99,18 +111,17 @@
             margin-bottom: 1rem;
         }
 
-        /* Headline flex layout: badge left of h1 */
-        .headline-flex {
+        /* Two-badge row (side by side on desktop, stack on mobile) */
+        .badge-row {
             display: flex;
-            align-items: center;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 1rem;
             flex-wrap: wrap;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
 
-        /* Remarkable privacy badge */
-        .privacy-shield {
+        /* Remarkable badge style */
+        .remarkable-badge {
             background: linear-gradient(135deg, #f0f9ff, #e6f2f9);
             border: 1px solid #b9d9f0;
             border-radius: 100px;
@@ -121,14 +132,26 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            white-space: nowrap;
             box-shadow: 0 6px 14px rgba(0, 27, 45, 0.08);
             backdrop-filter: blur(2px);
-            letter-spacing: -0.2px;
+            white-space: nowrap;
         }
 
-        .privacy-shield::before {
+        /* On mobile, allow text to wrap */
+        @media (max-width: 550px) {
+            .remarkable-badge {
+                white-space: normal;
+                text-align: center;
+            }
+        }
+
+        .remarkable-badge:first-child::before {
             content: "🔒";
+            font-size: 1rem;
+        }
+
+        .remarkable-badge:last-child::before {
+            content: "✅";
             font-size: 1rem;
         }
 
@@ -141,7 +164,7 @@
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            margin: 0; /* remove default margin to align with badge */
+            margin-top: 0;
         }
 
         .highlight {
@@ -155,10 +178,9 @@
             font-size: 1.2rem;
             color: #334155;
             max-width: 700px;
-            margin: 0 auto;
+            margin: 1rem auto 0;
         }
 
-        /* Rest of layout unchanged */
         .main-content {
             display: grid;
             grid-template-columns: 1fr 1.8fr 1fr;
@@ -269,7 +291,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 60px;  /* prevents layout shift */
+            min-height: 60px;
         }
 
         .jvzoo-button img {
@@ -388,21 +410,13 @@
             h1 {
                 font-size: 2rem;
             }
-            .headline-flex {
-                flex-direction: column;
-                gap: 0.8rem;
-            }
-            .privacy-shield {
-                white-space: normal;
-                text-align: center;
-            }
         }
 
         @keyframes fadeSlide {
             from { opacity: 0; transform: translateY(12px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .feature-card, .video-wrapper, .promo-box, .stat-item {
+        .feature-card, .video-wrapper, .promo-box, .stat-item, .remarkable-badge {
             animation: fadeSlide 0.4s ease-out forwards;
         }
     </style>
@@ -411,22 +425,26 @@
 
 <nav>
     <div class="logo-wrapper">
-        <div class="logo">Valety | AI Engineering</div>
-        <div class="tagline">built for engineers, by engineers</div>
+        <div class="valety">Valety |</div>
+        <div class="ai-group">
+            <div class="ai-eng">AI Engineering</div>
+            <div class="tagline">built for engineers, by engineers</div>
+        </div>
     </div>
     <a href="https://github.com/Gammarays1980/Valety/releases/download/v1.0.0/Valety-Setup-1.0.0.exe" class="download-link">⬇️ Download Valety .exe</a>
 </nav>
 
 <div class="container">
     <header>
-        <div class="subtitle">⚙️ ENGINEERING COMPLIANCE & RETRIEVAL AUTOMATION</div>
+ 
         
-        <!-- Privacy badge on the left of the headline -->
-        <div class="headline-flex">
-            <div class="privacy-shield">100% Private & Secured – data never leaves your machine</div>
-            <h1>Stop Manual Cross-Checking. <span class="highlight">Validate Instantly.</span></h1>
+        <!-- Two badges side by side (stack on mobile) -->
+        <div class="badge-row">
+            <div class="remarkable-badge">100% PRIVATE & SECURE – DATA NEVER LEAVES YOUR DATABASE</div>
+            <div class="remarkable-badge">ENGINEERING COMPLIANCE & RETRIEVAL AUTOMATION</div>
         </div>
-        
+
+        <h1>Stop Manual Cross-Checking. <span class="highlight">Validate Instantly.</span></h1>
         <p class="hero-text">AI validates your work against standards, codes, and documents with full traceability and zero cloud exposure.</p>
     </header>
 
@@ -434,9 +452,9 @@
         <!-- Left: Feature Cards -->
         <div class="feature-column">
             <div class="feature-card"><h3>🧠 One Instruction</h3><p>Telegram messages trigger AI validation — full reports in seconds.</p></div>
-            <div class="feature-card"><h3>💬 Document Chat</h3><p>Conversational AI over CAD, PDFs & Revit. Ask anything, get traceable answers.</p></div>
-            <div class="feature-card"><h3>⏱️ Save Hours Daily</h3><p>Automates cross-referencing, code checking — boost efficiency by 70%.</p></div>
-            <div class="feature-card"><h3>📂 Multi-Type Parsing</h3><p>Reads CAD, Revit, PDFs, Excel, Word natively.</p></div>
+            <div class="feature-card"><h3>💬 Document Chat</h3><p>Conversational AI over your project files. Ask anything, get traceable answers.</p></div>
+            <div class="feature-card"><h3>⏱️ Save Manual Hours</h3><p>Automates cross-referencing, code checking — boost efficiency by 70%.</p></div>
+            <div class="feature-card"><h3>📂 Multi-Type File Parsing</h3><p>Reads CAD, Revit, PDFs, Excel, Word, and More.</p></div>
         </div>
 
         <!-- Middle: Video -->
@@ -446,7 +464,7 @@
                     <source src="https://gammarays1980.github.io/Valety/demo-video.mp4" type="video/mp4">
                 </video>
             </div>
-            <div class="video-label">🎬 AI in action — live validation</div>
+            <div class="video-label">🎬 AI in action — real validation</div>
         </div>
 
         <!-- Right: Two pricing plans -->
