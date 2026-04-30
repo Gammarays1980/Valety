@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Valety | AI Engineering — Instant Compliance & Validation</title>
-    <!-- Google Fonts + enhanced system fallback -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -21,7 +21,6 @@
             scroll-behavior: smooth;
         }
 
-        /* modern glassmorphic nav */
         nav {
             display: flex;
             justify-content: space-between;
@@ -35,6 +34,12 @@
             z-index: 100;
         }
 
+        .logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+
         .logo {
             font-weight: 800;
             font-size: 1.5rem;
@@ -43,6 +48,14 @@
             -webkit-background-clip: text;
             color: transparent;
             letter-spacing: -0.3px;
+        }
+
+        .tagline {
+            font-size: 0.7rem;
+            font-weight: 500;
+            color: #4b6a8b;
+            letter-spacing: 0.2px;
+            margin-top: 2px;
         }
 
         .download-link {
@@ -54,14 +67,12 @@
             font-weight: 600;
             font-size: 0.9rem;
             transition: all 0.25s ease;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
             border: 1px solid #1e293b;
         }
 
         .download-link:hover {
             background: #1e293b;
             transform: translateY(-2px);
-            box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.2);
         }
 
         .container {
@@ -71,7 +82,6 @@
             width: 100%;
         }
 
-        /* header section */
         header {
             text-align: center;
             margin-bottom: 2.5rem;
@@ -114,10 +124,8 @@
             color: #334155;
             max-width: 700px;
             margin: 0 auto;
-            font-weight: 400;
         }
 
-        /* main GRID layout - professional & organized */
         .main-content {
             display: grid;
             grid-template-columns: 1fr 1.8fr 1fr;
@@ -126,7 +134,6 @@
             margin: 1.5rem 0 2rem;
         }
 
-        /* feature cards (left) */
         .feature-column {
             display: flex;
             flex-direction: column;
@@ -145,47 +152,20 @@
         .feature-card:hover {
             transform: translateY(-3px);
             border-color: #cbdde9;
-            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
         }
 
         .feature-card h3 {
             font-size: 1.2rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 8px;
         }
 
-        .feature-card p {
-            color: #334155;
-            font-size: 0.9rem;
-            line-height: 1.4;
-        }
-
-        /* video block: ensure perfect visibility */
         .video-wrapper {
             background: #0a0c10;
             border-radius: 28px;
             overflow: hidden;
             box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2);
             border: 1px solid rgba(203, 213, 225, 0.6);
-            transition: all 0.2s;
-        }
-
-        .video-label {
-            background: rgba(0,0,0,0.65);
-            backdrop-filter: blur(8px);
-            color: white;
-            font-size: 0.7rem;
-            font-weight: 500;
-            padding: 0.2rem 0.8rem;
-            border-radius: 40px;
-            position: absolute;
-            top: 12px;
-            left: 16px;
-            z-index: 2;
-            letter-spacing: 0.3px;
         }
 
         .video-container-relative {
@@ -196,29 +176,41 @@
             width: 100%;
             height: auto;
             display: block;
-            object-fit: contain;
-            background: #000000;
             aspect-ratio: 16 / 9;
-            cursor: pointer;
         }
 
-        /* promo card (right) */
+        .video-label {
+            position: absolute;
+            top: 16px;
+            left: 20px;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(4px);
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            color: white;
+            font-weight: 500;
+        }
+
         .promo-column {
             position: sticky;
             top: 90px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
         .promo-box {
             background: linear-gradient(145deg, #ffffff, #fefefe);
             border-radius: 28px;
-            padding: 1.8rem 1.5rem;
+            padding: 1.5rem 1.2rem;
             box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
             border: 1px solid #e2edf2;
             text-align: center;
         }
 
         .promo-box h2 {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 800;
             background: linear-gradient(120deg, #1e4a6e, #2c7da0);
             background-clip: text;
@@ -227,54 +219,76 @@
             margin-bottom: 0.25rem;
         }
 
-        .promo-box p {
-            color: #1e293b;
-            margin-bottom: 1rem;
-            font-weight: 500;
+        .price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin: 0.5rem 0;
         }
 
-        .btn-email {
-            display: inline-block;
-            background: #0f172a;
-            color: white;
-            padding: 0.8rem 1.2rem;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: 600;
+        .price small {
             font-size: 0.9rem;
-            margin: 1rem 0 1.2rem;
-            transition: all 0.2s;
-            border: 1px solid #2d3a5e;
-            word-break: break-word;
+            font-weight: 400;
         }
 
-        .btn-email:hover {
+        .jvzoo-button {
+            margin: 1rem 0;
+        }
+
+        .jvzoo-button img {
+            max-width: 100%;
+            height: auto;
+            width: auto;
+            max-height: 60px;  /* keeps button from being huge */
+        }
+
+        .btn-quote {
             background: #1e293b;
-            transform: scale(0.98);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            color: white;
+            text-decoration: none;
+            padding: 0.7rem 1rem;
+            border-radius: 40px;
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            width: 100%;
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        .btn-quote:hover {
+            background: #0f172a;
         }
 
         .benefits-list {
             text-align: left;
             margin-top: 1rem;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
         }
 
         .benefits-list p {
-            margin: 0.5rem 0;
+            margin: 0.4rem 0;
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        /* DATA INSIGHTS SECTION - well organized metrics */
+        .team-badge {
+            background: #3b82f6;
+            color: white;
+            font-size: 0.6rem;
+            padding: 2px 8px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
         .data-insights {
             margin: 3rem 0 2rem;
             background: #ffffffd9;
             border-radius: 40px;
             padding: 2rem 1.8rem;
             border: 1px solid #eef2f6;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.02);
         }
 
         .section-title {
@@ -282,7 +296,6 @@
             font-size: 1.6rem;
             font-weight: 700;
             margin-bottom: 2rem;
-            letter-spacing: -0.3px;
             color: #0f2b3d;
         }
 
@@ -293,10 +306,6 @@
             text-align: center;
         }
 
-        .stat-item {
-            padding: 0.5rem;
-        }
-
         .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
@@ -304,7 +313,6 @@
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
-            line-height: 1.2;
         }
 
         .stat-label {
@@ -312,31 +320,18 @@
             font-weight: 500;
             color: #2c3e50;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
-        .stat-desc {
-            font-size: 0.75rem;
-            color: #5b6e8c;
-            margin-top: 6px;
-        }
-
-        /* compliance block & footer */
         .jvzoo-compliance-block {
             font-size: 0.7rem;
             color: #475569;
             text-align: center;
             max-width: 1100px;
-            margin: 2.5rem auto 1rem auto;
+            margin: 2.5rem auto 1rem;
             padding: 1.5rem 1rem;
             border-top: 1px solid #e0e8f0;
             background: #fafcff;
             border-radius: 28px;
-            line-height: 1.5;
-        }
-
-        .jvzoo-compliance-block p {
-            margin-bottom: 0.6rem;
         }
 
         footer {
@@ -345,83 +340,25 @@
             text-align: center;
             padding: 1.8rem 0;
             border-top: 1px solid #e2edf2;
-            margin-top: 1rem;
-        }
-
-        footer a {
-            color: #2c7da0;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        /* responsive design */
-        @media (max-width: 1100px) {
-            .main-content {
-                grid-template-columns: 1fr 1.5fr 1fr;
-                gap: 1.5rem;
-            }
         }
 
         @media (max-width: 900px) {
             .main-content {
                 grid-template-columns: 1fr;
-                gap: 2rem;
             }
             .promo-column {
                 position: static;
             }
-            .container {
-                padding: 1.5rem;
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
-            nav {
-                padding: 0.8rem 1.5rem;
-            }
-            .video-wrapper video {
-                aspect-ratio: 16/9;
-            }
-            .stats-grid {
-                gap: 1rem;
-            }
+            h1 { font-size: 2.2rem; }
         }
 
-        @media (max-width: 480px) {
-            .logo {
-                font-size: 1.2rem;
-            }
-            .download-link {
-                padding: 0.4rem 1rem;
-                font-size: 0.75rem;
-            }
-            .feature-card h3 {
-                font-size: 1rem;
-            }
-        }
-
-        /* subtle animations */
         @keyframes fadeSlide {
-            from {
-                opacity: 0;
-                transform: translateY(12px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(12px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
         .feature-card, .video-wrapper, .promo-box, .stat-item {
             animation: fadeSlide 0.4s ease-out forwards;
         }
-
-        .feature-card:nth-child(1) { animation-delay: 0.05s; }
-        .feature-card:nth-child(2) { animation-delay: 0.1s; }
-        .feature-card:nth-child(3) { animation-delay: 0.15s; }
-        .feature-card:nth-child(4) { animation-delay: 0.2s; }
-        .video-wrapper { animation-delay: 0.1s; }
-        .promo-box { animation-delay: 0.15s; }
     </style>
 </head>
 <body>
@@ -442,145 +379,90 @@
     </header>
 
     <div class="main-content">
-        <!-- left column: organized feature data -->
+        <!-- Left: Feature Cards -->
         <div class="feature-column">
-            <div class="feature-card">
-                <h3>🧠 One Instruction</h3>
-                <p>Telegram messages trigger AI validation — full reports in seconds, no complex UI.</p>
-            </div>
-            <div class="feature-card">
-                <h3>💬 Document Chat</h3>
-                <p>Conversational AI over CAD, PDFs & Revit. Ask anything, get traceable answers.</p>
-            </div>
-            <div class="feature-card">
-                <h3>⏱️ Save Hours Daily</h3>
-                <p>Automates cross-referencing, code checking and retrieval — boost efficiency by 70%.</p>
-            </div>
-            <div class="feature-card">
-                <h3>📂 Multi-Type File Parsing</h3>
-                <p>Reads CAD, Revit, PDFs, Excel, Word natively to cover your needs.</p>
-            </div>
+            <div class="feature-card"><h3>🧠 One Instruction</h3><p>Telegram messages trigger AI validation — full reports in seconds.</p></div>
+            <div class="feature-card"><h3>💬 Document Chat</h3><p>Conversational AI over CAD, PDFs & Revit. Ask anything, get traceable answers.</p></div>
+            <div class="feature-card"><h3>⏱️ Save Hours Daily</h3><p>Automates cross-referencing, code checking — boost efficiency by 70%.</p></div>
+            <div class="feature-card"><h3>📂 Multi-Type Parsing</h3><p>Reads CAD, Revit, PDFs, Excel, Word natively.</p></div>
         </div>
 
-        <!-- MIDDLE: VIDEO - optimized for visibility and professional look -->
+        <!-- Middle: Video -->
         <div class="video-container-relative">
             <div class="video-wrapper">
                 <video autoplay loop muted playsinline preload="metadata" controls>
                     <source src="https://gammarays1980.github.io/Valety/demo-video.mp4" type="video/mp4">
-                    Your browser does not support the video tag. <a href="https://gammarays1980.github.io/Valety/demo-video.mp4">Watch demo</a>
                 </video>
             </div>
-            <div class="video-label" style="position: absolute; top: 16px; left: 20px; background: rgba(0,0,0,0.55); backdrop-filter: blur(4px); padding: 4px 12px; border-radius: 40px; font-size: 0.7rem; color: white; font-weight: 500;">🎬 AI in action — live validation</div>
+            <div class="video-label">🎬 AI in action — live validation</div>
         </div>
 
-        <!-- right column: promo & trial data -->
+        <!-- Right: Two pricing plans (Individual + Team) -->
         <div class="promo-column">
-    <!-- Individual Plan (Required for JVZoo Approval) -->
-    <div class="promo-box" style="margin-bottom: 1.5rem; border-color: #e2e8f0;">
-        <h2 style="font-size: 1.4rem;">Individual Plan</h2>
-        <p style="font-size: 1.8rem; font-weight: 800; color: #0f172a; margin-bottom: 0.5rem;">$35<span style="font-size: 0.9rem; font-weight: 400;">/year</span></p>
-        
-        <!-- JVZoo Buy Button -->
-        <div style="margin: 1rem 0;">
-            <a href="https://www.jvzoo.com/b/116509/439283/9"><img src="https://i.jvzoo.com/116509/439283/9" alt="valety" border="0" /></a>
-        </div>
+            <!-- Individual Plan with JVZoo Buy Button -->
+            <div class="promo-box">
+                <h2>Individual Plan</h2>
+                <div class="price">$35<span style="font-size: 0.9rem;">/year</span></div>
+                <div class="jvzoo-button">
+                    <a href="https://www.jvzoo.com/b/116509/439283/9">
+                        <img src="https://i.jvzoo.com/116509/439283/9" alt="Buy Valety on JVZoo" border="0" style="max-width: 100%; height: auto; max-height: 55px;" />
+                    </a>
+                </div>
+                <div class="benefits-list">
+                    <p>✅ 1-Month Free Trial Included</p>
+                    <p>✅ Single License Key</p>
+                    <p>✅ Auto-updates & Support</p>
+                </div>
+            </div>
 
-        <div class="benefits-list" style="margin-top: 0.5rem;">
-            <p>✅ 1-Month Free Trial Included</p>
-            <p>✅ Single License Key</p>
-            <p>✅ Auto-updates & Support</p>
-        </div>
-    </div>
-
-    <!-- Team Plan (Strategic for Engineering Firms) -->
-    <div class="promo-box" style="border-color: #3b82f6; background: #f8faff; border-width: 2px;">
-        <div style="background: #3b82f6; color: white; font-size: 0.6rem; padding: 2px 8px; border-radius: 10px; display: inline-block; margin-bottom: 0.5rem;">FIRM SOLUTIONS</div>
-        <h2 style="font-size: 1.4rem;">Team Plan</h2>
-        <p style="font-size: 1.3rem; font-weight: 700; color: #0f172a;">$30<span style="font-size: 0.8rem; font-weight: 400;">/user/year</span></p>
-        <p style="font-size: 0.7rem; color: #475569; margin-bottom: 1rem;">(Min. 10 Users Required)</p>
-        
-        <a href="mailto:valety.subscription@gmail.com?subject=Valety%20Team%20Quote%20Request" 
-           style="background: #1e293b; color: white; text-decoration: none; padding: 0.8rem; border-radius: 40px; display: block; font-size: 0.85rem; font-weight: 600; text-align: center;">
-           Request Team Quote
-        </a>
-
-        <div class="benefits-list" style="margin-top: 1rem; font-size: 0.75rem;">
-            <p>✓ Centralized License Mgmt</p>
-            <p>✓ Priority Engineering Support</p>
-            <p>✓ Custom Corporate Invoicing</p>
-        </div>
-    </div>
-</div>
+            <!-- Team Plan -->
+            <div class="promo-box" style="border: 2px solid #3b82f6;">
+                <div class="team-badge">FIRM SOLUTIONS</div>
+                <h2>Team Plan</h2>
+                <div class="price">$30<span style="font-size: 0.9rem;">/user/year</span></div>
+                <p style="font-size: 0.7rem; color: #475569; margin-bottom: 1rem;">(Min. 10 Users Required)</p>
+                <a href="mailto:valety.subscription@gmail.com?subject=Valety%20Team%20Quote%20Request" class="btn-quote">📩 Request Team Quote</a>
+                <div class="benefits-list" style="margin-top: 1rem;">
+                    <p>✓ Centralized License Mgmt</p>
+                    <p>✓ Priority Engineering Support</p>
+                    <p>✓ Custom Corporate Invoicing</p>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- ADDITIONAL DATA ORGANIZATION: performance metrics & engineering insights -->
+    <!-- Data Insights Section -->
     <div class="data-insights">
         <div class="section-title">📊 Trusted engineering data intelligence</div>
         <div class="stats-grid">
-            <div class="stat-item">
-                <div class="stat-number">98.6%</div>
-                <div class="stat-label">Validation accuracy</div>
-                <div class="stat-desc">based on internal benchmark tests</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">User-defined AI Persona</div>
-                <div class="stat-desc">instruct AI to behave per your preference</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">3.2s</div>
-                <div class="stat-label">Avg. query response</div>
-                <div class="stat-desc">local AI inference + retrieval speed</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">On-prem / private</div>
-                <div class="stat-desc">zero data leaves your environment</div>
-            </div>
+            <div class="stat-item"><div class="stat-number">98.6%</div><div class="stat-label">Validation accuracy</div></div>
+            <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">User-defined AI Persona</div></div>
+            <div class="stat-item"><div class="stat-number">3.2s</div><div class="stat-label">Avg. query response</div></div>
+            <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">On-prem / private</div></div>
         </div>
-        <div style="text-align: center; margin-top: 1.8rem; font-size: 0.75rem; color: #4a627a; background: #eef4ff80; padding: 0.6rem; border-radius: 60px; width: fit-content; margin-left: auto; margin-right: auto;">
-            🔍 Full audit trail · Version comparison · Real-time compliance mapping
-        </div>
+        <div style="text-align: center; margin-top: 1.8rem; font-size: 0.75rem;">🔍 Full audit trail · Version comparison · Real-time compliance mapping</div>
     </div>
 
-    <!-- Compliance block: legally required, structured cleanly -->
+    <!-- Compliance Block -->
     <div class="jvzoo-compliance-block">
-        <p><strong>Disclaimer:</strong> This product does not guarantee income or specific business success. Any examples of "Expert Agent" validation or operational savings are based on technical benchmarks and should not be considered typical for every engineering project. Results depend on individual implementation and file quality.</p>
-        <p>This website is not part of the FaceBook website or FaceBook Inc. Additionally, this site is NOT endorsed by FaceBook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
-        <p><strong>Retailer Statement:</strong> JVZoo is the retailer of the products on this site. JVZoo® is a registered trademark of BBC Systems Inc., a Florida corporation located at 1809 E. Broadway Street, Suite 125, Oviedo, FL 32765, USA and used by permission. JVZoo's role as retailer does not constitute an endorsement, approval or review of these products or any claim, statement or opinion used in promotion of these products.</p>
+        <p><strong>Disclaimer:</strong> This product does not guarantee income or specific business success. Results depend on individual implementation and file quality.</p>
+        <p>This website is not part of the FaceBook website or FaceBook Inc. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
+        <p><strong>Retailer Statement:</strong> JVZoo is the retailer of the products on this site. JVZoo® is a registered trademark of BBC Systems Inc., used by permission.</p>
     </div>
 
     <footer>
-        © 2026 VALETY | Valety AI Engineering — <a href="privacy.html">Privacy Policy</a> | <a href="#" style="color:#2c7da0;">Contact security</a>
+        © 2026 VALETY | Valety AI Engineering — <a href="privacy.html">Privacy Policy</a>
     </footer>
 </div>
 
-<!-- optional minor script to ensure video plays reliably (autoplay policies friendly) -->
 <script>
     (function() {
-        // Ensure video element gets optimal visibility and attempts to play if muted autoplay blocked
         const video = document.querySelector('video');
         if (video) {
             video.muted = true;
             video.playsInline = true;
-            video.play().catch(e => console.log("Autoplay prevented, user can click play:", e));
-            // optional: set poster if needed but not required
-            video.setAttribute('controlslist', 'nodownload'); // subtle UI
+            video.play().catch(e => console.log("Autoplay blocked"));
         }
-        // add sticky smooth behavior
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if(href !== "#" && href !== "") {
-                    const target = document.querySelector(href);
-                    if(target) {
-                        e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                }
-            });
-        });
     })();
 </script>
 </body>
