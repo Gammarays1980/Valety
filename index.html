@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Valety | AI Engineering — Instant Compliance & Validation</title>
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -100,16 +99,49 @@
             margin-bottom: 1rem;
         }
 
+        /* Headline flex layout: badge left of h1 */
+        .headline-flex {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+
+        /* Remarkable privacy badge */
+        .privacy-shield {
+            background: linear-gradient(135deg, #f0f9ff, #e6f2f9);
+            border: 1px solid #b9d9f0;
+            border-radius: 100px;
+            padding: 0.5rem 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #1a4d6b;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            white-space: nowrap;
+            box-shadow: 0 6px 14px rgba(0, 27, 45, 0.08);
+            backdrop-filter: blur(2px);
+            letter-spacing: -0.2px;
+        }
+
+        .privacy-shield::before {
+            content: "🔒";
+            font-size: 1rem;
+        }
+
         h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 800;
             letter-spacing: -0.02em;
             line-height: 1.2;
-            margin-bottom: 1rem;
             background: linear-gradient(145deg, #0b2b38, #1f6392);
             background-clip: text;
             -webkit-background-clip: text;
             color: transparent;
+            margin: 0; /* remove default margin to align with badge */
         }
 
         .highlight {
@@ -126,6 +158,7 @@
             margin: 0 auto;
         }
 
+        /* Rest of layout unchanged */
         .main-content {
             display: grid;
             grid-template-columns: 1fr 1.8fr 1fr;
@@ -231,20 +264,18 @@
             font-weight: 400;
         }
 
-       .jvzoo-button {
-    margin: 1.2rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 60px; /* Prevents layout shift while button loads */
-}
+        .jvzoo-button {
+            margin: 1.2rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 60px;  /* prevents layout shift */
         }
 
         .jvzoo-button img {
             max-width: 100%;
             height: auto;
-            width: auto;
-            max-height: 60px;  /* keeps button from being huge */
+            max-height: 55px;
         }
 
         .btn-quote {
@@ -354,7 +385,17 @@
             .promo-column {
                 position: static;
             }
-            h1 { font-size: 2.2rem; }
+            h1 {
+                font-size: 2rem;
+            }
+            .headline-flex {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .privacy-shield {
+                white-space: normal;
+                text-align: center;
+            }
         }
 
         @keyframes fadeSlide {
@@ -379,7 +420,13 @@
 <div class="container">
     <header>
         <div class="subtitle">⚙️ ENGINEERING COMPLIANCE & RETRIEVAL AUTOMATION</div>
-        <h1>Stop Manual Cross-Checking. <span class="highlight">Validate Instantly.</span></h1>
+        
+        <!-- Privacy badge on the left of the headline -->
+        <div class="headline-flex">
+            <div class="privacy-shield">100% Private & Secured – data never leaves your machine</div>
+            <h1>Stop Manual Cross-Checking. <span class="highlight">Validate Instantly.</span></h1>
+        </div>
+        
         <p class="hero-text">AI validates your work against standards, codes, and documents with full traceability and zero cloud exposure.</p>
     </header>
 
@@ -402,7 +449,7 @@
             <div class="video-label">🎬 AI in action — live validation</div>
         </div>
 
-        <!-- Right: Two pricing plans (Individual + Team) -->
+        <!-- Right: Two pricing plans -->
         <div class="promo-column">
             <!-- Individual Plan with JVZoo Buy Button -->
             <div class="promo-box">
@@ -410,7 +457,7 @@
                 <div class="price">$35<span style="font-size: 0.9rem;">/year</span></div>
                 <div class="jvzoo-button">
                     <a href="https://www.jvzoo.com/b/116509/439283/9">
-                        <img src="https://i.jvzoo.com/116509/439283/9" alt="Buy Valety on JVZoo" border="0" style="max-width: 100%; height: auto; max-height: 55px;" />
+                        <img src="https://i.jvzoo.com/116509/439283/9" alt="Buy Valety on JVZoo" border="0" />
                     </a>
                 </div>
                 <div class="benefits-list">
