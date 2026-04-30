@@ -1,237 +1,77 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Valety | AI Engineering</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
+body {
             background: linear-gradient(135deg, #f5f7fc 0%, #eef2f8 100%);
             color: #1e293b;
             font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.3;
-            /* FIXED: Changed from height: 100vh to min-height and removed overflow:hidden */
+            line-height: 1.4;
+            /* Changed to min-height to allow scrolling if content overflows */
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow-x: hidden;
         }
 
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0.75rem 2rem;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid #e2e8f0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-      
-        .logo {
-            font-size: 1.3rem;
-            font-weight: 700;
-            background: linear-gradient(115deg, #0f172a, #3b82f6);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: -0.3px;
-        }
-        .download-link {
-            color: #3b82f6;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.8rem;
-            border: 1px solid #3b82f6;
-            padding: 0.4rem 0.9rem;
-            border-radius: 40px;
-            transition: all 0.2s;
-            background: rgba(59, 130, 246, 0.05);
-        }
-        .download-link:hover {
-            background: #3b82f6;
-            color: white;
-        }
-
-        /* Main container */
+        /* Main container - removed flex:1 and fixed height constraints */
         .container {
-            flex: 1;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 1.5rem;
+            padding: 2rem 1.5rem;
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
-        header {
-            text-align: center;
-        }
-        .subtitle {
-            text-transform: uppercase;
-            color: #3b82f6;
-            font-weight: 600;
-            letter-spacing: 2px;
-            font-size: 0.65rem;
-            margin-bottom: 0.25rem;
-        }
-        h1 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin: 0.5rem 0;
-            color: #0f172a;
-        }
-        .highlight { color: #3b82f6; }
-        .hero-text {
-            max-width: 650px;
-            margin: 0 auto;
-            font-size: 0.9rem;
-            color: #475569;
-        }
-
+        /* Three-column layout - ensures items align correctly without cutting off */
         .main-content {
             display: flex;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
             gap: 1.5rem;
+            align-items: flex-start;
         }
 
+        /* Left column – adjusted width for better balance */
         .feature-column {
             display: flex;
             flex-direction: column;
-            gap: 0.7rem;
-            width: 25%;
-        }
-        .feature-card {
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 0.8rem;
-        }
-        .feature-card h3 { font-size: 0.85rem; margin-bottom: 0.2rem; }
-        .feature-card p { font-size: 0.75rem; color: #64748b; }
-
-        .video-wrapper {
+            gap: 0.8rem;
             flex: 1;
+            min-width: 280px;
+        }
+
+        /* Middle column – video now scales properly */
+        .video-wrapper {
+            flex: 2;
+            min-width: 400px;
             border-radius: 18px;
             overflow: hidden;
             border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
             background: #000;
-            aspect-ratio: 16/9;
-        }
-        video { width: 100%; height: 100%; object-fit: cover; }
-
-        .promo-column { width: 25%; }
-        .promo-box {
-            background: white;
-            border: 1px solid #3b82f6;
-            border-radius: 18px;
-            padding: 1.5rem;
-            text-align: center;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .btn-email {
-            background: #3b82f6;
-            color: white;
-            padding: 0.6rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 600;
-            display: block;
-            margin: 1rem 0;
         }
 
-        /* Compliance Block */
+        /* Right column – promo box fixed width */
+        .promo-column {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        /* Compliance Block - added more padding and clear separation */
         .jvzoo-compliance-block {
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             color: #64748b;
             text-align: center;
             max-width: 1000px;
-            margin: 4rem auto 2rem auto;
-            padding: 2rem 1rem;
+            margin: 4rem auto 0 auto;
+            padding: 2rem 1.5rem;
             border-top: 1px solid #e2e8f0;
             line-height: 1.6;
         }
-        .jvzoo-compliance-block p { margin-bottom: 1rem; }
 
         footer {
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             color: #94a3b8;
             text-align: center;
-            padding: 2rem;
-            background: #f8fafc;
+            padding: 1.5rem 0;
+            background: rgba(255, 255, 255, 0.5);
             border-top: 1px solid #e2e8f0;
         }
-
-        @media (max-width: 1000px) {
-            .main-content { flex-direction: column; }
-            .feature-column, .promo-column { width: 100%; }
-        }
-    </style>
-</head>
-<body>
-
-    <nav>
-        <div class="logo">Valety | AI Engineering</div>
-        <a href="https://github.com/Gammarays1980/Valety/releases/download/v1.0.0/Valety-Setup-1.0.0.exe" class="download-link">Download Valety .exe</a>
-    </nav>
-
-    <div class="container">
-        <header>
-            <div class="subtitle">AI Engineering Compliance & Retrieval Automation</div>
-            <h1>Stop Manual Cross-Checking. <span class="highlight">Validate Instantly.</span></h1>
-            <p class="hero-text">AI validates your work against standards, codes, and documents with full traceability and privacy.</p>
-        </header>
-
-        <div class="main-content">
-            <div class="feature-column">
-                <div class="feature-card"><h3>🧠 One Instruction</h3><p>Telegram messages get full validation reports in seconds.</p></div>
-                <div class="feature-card"><h3>💬 Document Chat</h3><p>Ask questions and get immediate, traceable answers.</p></div>
-                <div class="feature-card"><h3>⏱️ Save Hours</h3><p>Automate validation and search instantly.</p></div>
-                <div class="feature-card"><h3>📂 Native Files</h3><p>Reads CAD, Revit, PDFs, and Excel natively.</p></div>
-            </div>
-
-            <div class="video-wrapper">
-                <video autoplay loop muted playsinline>
-                    <source src="https://gammarays1980.github.io/Valety/demo-video.mp4" type="video/mp4">
-                </video>
-            </div>
-
-            <div class="promo-column">
-                <div class="promo-box">
-                    <h2>Get 1 Month Free</h2>
-                    <p>Activate your trial</p>
-                    <a href="mailto:valety.subscription@gmail.com?subject=One%20Month%20Free%20Trial" class="btn-email">valety.subscription@gmail.com</a>
-                    <div style="font-size: 0.7rem; text-align: left; color: #475569;">
-                        <p>✅ No credit card required</p>
-                        <p>✅ Full access to all features</p>
-                        <p>✅ No strings attached</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="jvzoo-compliance-block">
-        <p><strong>Disclaimer:</strong> This product does not guarantee income or specific business success. Any examples of "Expert Agent" validation or operational savings are based on technical benchmarks and should not be considered typical for every engineering project. Results depend on individual implementation and file quality.</p>
-        <p>This website is not part of the FaceBook website or FaceBook Inc. Additionally, this site is NOT endorsed by FaceBook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
-        <p><strong>Retailer Statement:</strong> JVZoo is the retailer of the products on this site. JVZoo® is a registered trademark of BBC Systems Inc., a Florida corporation located at 1809 E. Broadway Street, Suite 125, Oviedo, FL 32765, USA and used by permission. JVZoo's role as retailer does not constitute an endorsement, approval or review of these products or any claim, statement or opinion used in promotion of these products.</p>
-    </div>
-
-    <footer>
-        © 2026 VALETY | VALETY AI | <a href="privacy.html" style="color: inherit;">Privacy Policy</a>
-    </footer>
-
-</body>
-</html>
