@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Valety | AI Engineering — Instant Compliance & Validation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Valety | Engineering Review Intelligence Platform</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -13,575 +15,706 @@
         }
 
         body {
+            font-family: 'Inter', sans-serif;
             background: #f8fafc;
             color: #0f172a;
-            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
-            line-height: 1.5;
-            scroll-behavior: smooth;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1350px;
+            margin: auto;
+            padding: 0 24px;
         }
 
         nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid rgba(203, 213, 225, 0.5);
             position: sticky;
             top: 0;
             z-index: 100;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e2e8f0;
         }
 
-      .logo-wrapper {
-    display: inline-grid;
-    grid-template-columns: auto auto;
-    align-items: baseline;
-    gap: 0.25rem;
-}
-.valety {
-    font-weight: 800;
-    font-size: 1.5rem;
-    background: linear-gradient(135deg, #0f2b3d, #1e4a6e);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    white-space: nowrap;
-}
-.ai-group {
-    display: flex;
-    flex-direction: column;
-}
-.ai-eng {
-    font-weight: 800;
-    font-size: 1.5rem;
-    background: linear-gradient(135deg, #0f2b3d, #1e4a6e);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    white-space: nowrap;
-}
-.tagline {
-    font-size: 0.7rem;
-    font-weight: 500;
-    color: #4b6a8b;
-    margin-top: -0.2rem;
-    white-space: nowrap;
-}
+        .nav-inner {
+            height: 78px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-        .download-link {
+        .logo {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .logo-sub {
+            font-size: 0.72rem;
+            color: #64748b;
+            margin-top: -2px;
+        }
+
+        .download-btn {
             background: #0f172a;
             color: white;
-            text-decoration: none;
-            padding: 0.6rem 1.4rem;
-            border-radius: 40px;
+            padding: 12px 22px;
+            border-radius: 999px;
+            font-size: 0.92rem;
             font-weight: 600;
-            font-size: 0.9rem;
-            transition: all 0.25s ease;
-            border: 1px solid #1e293b;
+            transition: 0.2s ease;
         }
 
-        .download-link:hover {
+        .download-btn:hover {
             background: #1e293b;
             transform: translateY(-2px);
         }
 
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 2rem 2rem 1rem 2rem;
-            width: 100%;
-        }
-
         header {
+            padding: 70px 0 30px;
             text-align: center;
-            margin-bottom: 2.5rem;
         }
 
-        .subtitle {
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #2c7da0;
-            background: #e9f4f9;
-            display: inline-block;
-            padding: 0.3rem 1rem;
-            border-radius: 30px;
-            margin-bottom: 1rem;
-        }
-
-        /* Two-badge row (side by side on desktop, stack on mobile) */
         .badge-row {
             display: flex;
             justify-content: center;
-            gap: 1rem;
             flex-wrap: wrap;
-            margin-bottom: 1.2rem;
+            gap: 14px;
+            margin-bottom: 24px;
         }
 
-        /* Remarkable badge style */
-        .remarkable-badge {
-            background: linear-gradient(135deg, #f0f9ff, #e6f2f9);
-            border: 1px solid #b9d9f0;
-            border-radius: 100px;
-            padding: 0.5rem 1.2rem;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: #1a4d6b;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            box-shadow: 0 6px 14px rgba(0, 27, 45, 0.08);
-            backdrop-filter: blur(2px);
-            white-space: nowrap;
-        }
-
-        /* On mobile, allow text to wrap */
-        @media (max-width: 550px) {
-            .remarkable-badge {
-                white-space: normal;
-                text-align: center;
-            }
-        }
-
-        .remarkable-badge:first-child::before {
-            content: "🔒";
-            font-size: 1rem;
-        }
-
-        .remarkable-badge:last-child::before {
-            content: "✅";
-            font-size: 1rem;
+        .badge {
+            background: white;
+            border: 1px solid #dbe7f0;
+            border-radius: 999px;
+            padding: 10px 18px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #1e3a5f;
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
         }
 
         h1 {
-            font-size: 2.8rem;
+            font-size: 3.3rem;
+            line-height: 1.1;
             font-weight: 800;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            background: linear-gradient(145deg, #0b2b38, #1f6392);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-top: 0;
+            max-width: 980px;
+            margin: auto;
+            color: #0f172a;
         }
 
         .highlight {
-            background: linear-gradient(120deg, #2c7da0, #3b9ac6);
-            background-clip: text;
+            background: linear-gradient(135deg, #2563eb, #0ea5e9);
             -webkit-background-clip: text;
-            color: transparent;
+            -webkit-text-fill-color: transparent;
         }
 
         .hero-text {
-            font-size: 1.2rem;
-            color: #334155;
-            max-width: 700px;
-            margin: 1rem auto 0;
+            margin: 24px auto 0;
+            max-width: 820px;
+            font-size: 1.18rem;
+            color: #475569;
         }
 
-        .main-content {
+        .main-grid {
             display: grid;
-            grid-template-columns: 1fr 1.8fr 1fr;
-            gap: 2rem;
+            grid-template-columns: 1fr 1.7fr 1fr;
+            gap: 28px;
+            margin-top: 50px;
             align-items: start;
-            margin: 1.5rem 0 2rem;
         }
 
         .feature-column {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
+            gap: 18px;
         }
 
-        .feature-card {
+        .card {
             background: white;
             border-radius: 24px;
-            padding: 1.2rem 1.3rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.03);
-            border: 1px solid #e9edf2;
-            transition: all 0.2s;
+            padding: 24px;
+            border: 1px solid #e5edf5;
+            box-shadow: 0 10px 25px rgba(15,23,42,0.04);
         }
 
-        .feature-card:hover {
-            transform: translateY(-3px);
-            border-color: #cbdde9;
+        .card h3 {
+            font-size: 1.08rem;
+            margin-bottom: 10px;
+            color: #0f172a;
         }
 
-        .feature-card h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+        .card p {
+            font-size: 0.92rem;
+            color: #475569;
         }
 
         .video-wrapper {
-            background: #0a0c10;
-            border-radius: 28px;
             overflow: hidden;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(203, 213, 225, 0.6);
-        }
-
-        .video-container-relative {
-            position: relative;
+            border-radius: 30px;
+            background: black;
+            border: 1px solid #dbe4ee;
+            box-shadow: 0 25px 40px rgba(15,23,42,0.12);
         }
 
         .video-wrapper video {
             width: 100%;
-            height: auto;
             display: block;
             aspect-ratio: 16 / 9;
         }
 
         .video-label {
-            position: absolute;
-            top: 16px;
-            left: 20px;
-            background: rgba(0,0,0,0.55);
-            backdrop-filter: blur(4px);
-            padding: 4px 12px;
-            border-radius: 40px;
-            font-size: 0.7rem;
-            color: white;
-            font-weight: 500;
+            margin-top: 12px;
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
         }
 
-        .promo-column {
-            position: sticky;
-            top: 90px;
+        .pricing-column {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 20px;
         }
 
-        .promo-box {
-            background: linear-gradient(145deg, #ffffff, #fefefe);
+        .pricing-box {
+            background: white;
             border-radius: 28px;
-            padding: 1.5rem 1.2rem;
-            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
-            border: 1px solid #e2edf2;
-            text-align: center;
+            padding: 28px;
+            border: 1px solid #dbe7f0;
+            box-shadow: 0 15px 35px rgba(15,23,42,0.06);
         }
 
-        .promo-box h2 {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: linear-gradient(120deg, #1e4a6e, #2c7da0);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 0.25rem;
+        .pricing-box.featured {
+            border: 2px solid #2563eb;
+        }
+
+        .pricing-box h2 {
+            font-size: 1.45rem;
+            margin-bottom: 10px;
         }
 
         .price {
-            font-size: 1.8rem;
+            font-size: 2.3rem;
             font-weight: 800;
-            color: #0f172a;
-            margin: 0.5rem 0;
+            margin: 16px 0;
         }
 
         .price small {
-            font-size: 0.9rem;
-            font-weight: 400;
+            font-size: 0.95rem;
+            color: #64748b;
         }
 
-        .jvzoo-button {
-            margin: 1.2rem 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 60px;
-        }
-
-        .jvzoo-button img {
-            max-width: 100%;
-            height: auto;
-            max-height: 55px;
-        }
-
-        .btn-quote {
-            background: #1e293b;
-            color: white;
-            text-decoration: none;
-            padding: 0.7rem 1rem;
-            border-radius: 40px;
-            display: inline-block;
-            font-size: 0.85rem;
-            font-weight: 600;
+        .buy-btn,
+        .quote-btn {
+            display: block;
             width: 100%;
             text-align: center;
-            transition: 0.2s;
+            padding: 14px;
+            border-radius: 14px;
+            font-weight: 700;
+            margin-top: 18px;
         }
 
-        .btn-quote:hover {
+        .buy-btn {
             background: #0f172a;
-        }
-
-        .benefits-list {
-            text-align: left;
-            margin-top: 1rem;
-            font-size: 0.8rem;
-        }
-
-        .benefits-list p {
-            margin: 0.4rem 0;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .team-badge {
-            background: #3b82f6;
             color: white;
-            font-size: 0.6rem;
-            padding: 2px 8px;
-            border-radius: 10px;
-            display: inline-block;
-            margin-bottom: 0.5rem;
         }
 
-        .data-insights {
-            margin: 3rem 0 2rem;
-            background: #ffffffd9;
-            border-radius: 40px;
-            padding: 2rem 1.8rem;
-            border: 1px solid #eef2f6;
+        .quote-btn {
+            background: #2563eb;
+            color: white;
+        }
+
+        .benefits {
+            margin-top: 20px;
+        }
+
+        .benefits p {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+
+        .section {
+            margin-top: 80px;
         }
 
         .section-title {
             text-align: center;
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            color: #0f2b3d;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 760px;
+            margin: auto;
+            color: #64748b;
+        }
+
+        .grid-3 {
+            margin-top: 40px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .grid-card {
+            background: white;
+            border-radius: 22px;
+            padding: 26px;
+            border: 1px solid #e5edf5;
+        }
+
+        .grid-card h3 {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        .grid-card p {
+            font-size: 0.92rem;
+            color: #475569;
         }
 
         .stats-grid {
+            margin-top: 40px;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(4,1fr);
+            gap: 24px;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 22px;
+            padding: 28px;
             text-align: center;
+            border: 1px solid #e5edf5;
         }
 
         .stat-number {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 800;
-            background: linear-gradient(135deg, #1e4a6e, #2c7da0);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
+            color: #2563eb;
         }
 
         .stat-label {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: #2c3e50;
-            text-transform: uppercase;
+            margin-top: 10px;
+            font-size: 0.88rem;
+            color: #64748b;
         }
 
-        .jvzoo-compliance-block {
-            font-size: 0.7rem;
-            color: #475569;
-            text-align: center;
-            max-width: 1100px;
-            margin: 2.5rem auto 1rem;
-            padding: 1.5rem 1rem;
-            border-top: 1px solid #e0e8f0;
-            background: #fafcff;
+        .contact-box {
+            margin: 80px auto;
+            max-width: 720px;
+            background: white;
             border-radius: 28px;
-        }
-.contact-section {
-            background-color: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin: 3rem auto;
-            max-width: 600px;
+            padding: 40px;
+            border: 1px solid #e5edf5;
             text-align: center;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
-        .contact-section h2 {
-            color: #0f172a;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+
+        .contact-box h2 {
+            margin-bottom: 12px;
         }
-        .contact-section p {
+
+        .contact-box p {
             color: #64748b;
-            margin-bottom: 1.5rem;
+            margin-bottom: 24px;
         }
-        .email-link {
+
+        .contact-email {
             display: inline-block;
+            padding: 14px 22px;
+            border-radius: 14px;
+            background: #f1f5f9;
+            color: #0f172a;
             font-weight: 600;
-            color: #3b82f6;
-            text-decoration: none;
-            font-size: 1.1rem;
-            padding: 0.5rem 1rem;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-        }
-        .email-link:hover {
-            background-color: #f8fafc;
-            border-color: #3b82f6;
-            transform: translateY(-1px);
         }
 
         footer {
-            font-size: 0.7rem;
-            color: #5f6c84;
+            border-top: 1px solid #e2e8f0;
+            padding: 24px;
             text-align: center;
-            padding: 1.8rem 0;
-            border-top: 1px solid #e2edf2;
+            color: #64748b;
+            font-size: 0.78rem;
         }
 
-        @media (max-width: 900px) {
-            .main-content {
+        @media(max-width: 1100px) {
+            .main-grid {
                 grid-template-columns: 1fr;
             }
-            .promo-column {
-                position: static;
+
+            .grid-3 {
+                grid-template-columns: 1fr;
             }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            h1 {
+                font-size: 2.4rem;
+            }
+        }
+
+        @media(max-width: 700px) {
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
             h1 {
                 font-size: 2rem;
             }
-        }
 
-        @keyframes fadeSlide {
-            from { opacity: 0; transform: translateY(12px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .feature-card, .video-wrapper, .promo-box, .stat-item, .remarkable-badge {
-            animation: fadeSlide 0.4s ease-out forwards;
+            .hero-text {
+                font-size: 1rem;
+            }
+
+            .download-btn {
+                display: none;
+            }
         }
     </style>
 </head>
+
 <body>
 
 <nav>
-    <div class="logo-wrapper">
-        <div class="valety">Valety |</div>
-        <div class="ai-group">
-            <div class="ai-eng">AI Engineering</div>
-            <div class="tagline">built for engineers, by engineers</div>
-        </div>
-    </div>
-    <!-- Clean, non-breaking link for v1.0.1 -->
-    <a href="https://github.com/Gammarays1980/Valety/releases/download/v1.0.1/Valety-Setup-1.0.1.exe" class="download-link">⬇️ Download Valety .exe</a>
-</nav>
-<div class="container">
-    <header>
- 
-        
-        <!-- Two badges side by side (stack on mobile) -->
-        <div class="badge-row">
-            <div class="remarkable-badge">100% PRIVATE & SECURE – DATA NEVER LEAVES YOUR DATABASE</div>
-            <div class="remarkable-badge">ENGINEERING COMPLIANCE & RETRIEVAL AUTOMATION</div>
+    <div class="container nav-inner">
+
+        <div class="logo">
+            <div class="logo-main">Valety</div>
+            <div class="logo-sub">Engineering Review Intelligence Platform</div>
         </div>
 
-        <h1>Stop Manual Cross-Checking. <span class="highlight">Validate Instantly.</span></h1>
-        <p class="hero-text">AI validates your work against standards, codes, and documents with full traceability and zero cloud exposure.</p>
+        <a href="https://github.com/Gammarays1980/Valety/releases/download/v1.0.1/Valety-Setup-1.0.1.exe"
+           class="download-btn">
+            Download Valety for Windows
+        </a>
+
+    </div>
+</nav>
+
+<div class="container">
+
+    <header>
+
+        <div class="badge-row">
+            <div class="badge">🔒 100% Local Processing — Files Never Leave Your Environment</div>
+            <div class="badge">📑 Technical Validation • Revision Comparison • Risk Detection</div>
+        </div>
+
+        <h1>
+            Detect Technical Gaps, Exclusions & Risks
+            <span class="highlight">Before They Become Costly.</span>
+        </h1>
+
+        <p class="hero-text">
+            Valety helps engineering teams validate submissions, compare revisions,
+            detect exclusions, and generate professional technical review reports —
+            locally and privately.
+        </p>
+
     </header>
 
-    <div class="main-content">
-        <!-- Left: Feature Cards -->
+    <div class="main-grid">
+
+        <!-- LEFT -->
         <div class="feature-column">
-            <div class="feature-card"><h3>🧠 One Instruction</h3><p>Telegram messages trigger AI validation — full reports in seconds.</p></div>
-            <div class="feature-card"><h3>💬 Document Chat</h3><p>Conversational AI over your project files. Ask anything, get traceable answers.</p></div>
-            <div class="feature-card"><h3>⏱️ Save Manual Hours</h3><p>Automates cross-referencing, code checking — boost efficiency by 70%.</p></div>
-            <div class="feature-card"><h3>📂 Multi-Type File Parsing</h3><p>Reads CAD, Revit, PDFs, Excel, Word, and More.</p></div>
+
+            <div class="card">
+                <h3>📋 Technical Validation</h3>
+                <p>
+                    Validate engineering submissions against specifications,
+                    requirements, and reference documents with full traceability.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>🔍 Exclusions & Risk Detection</h3>
+                <p>
+                    Detect hidden exclusions, missing scope, responsibility shifts,
+                    and technical risks before approval.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>📊 Revision & Proposal Comparison</h3>
+                <p>
+                    Compare contractor submissions, revisions, and specifications
+                    using structured compliance matrices.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>📄 Professional Review Reports</h3>
+                <p>
+                    Generate structured DOCX reports with executive summaries,
+                    findings tables, and evidence references.
+                </p>
+            </div>
+
         </div>
 
-        <!-- Middle: Video -->
-        <div class="video-container-relative">
+        <!-- CENTER -->
+        <div>
+
             <div class="video-wrapper">
-                <video autoplay loop muted playsinline preload="metadata" controls>
+                <video autoplay muted loop playsinline controls>
                     <source src="https://gammarays1980.github.io/Valety/demo-video.mp4" type="video/mp4">
                 </video>
             </div>
-            <div class="video-label">🎬 AI in action — real validation</div>
-        </div>
 
-        <!-- Right: Two pricing plans -->
-        <div class="promo-column">
-            <!-- Individual Plan with JVZoo Buy Button -->
-            <div class="promo-box">
-                <h2>Individual Plan</h2>
-                <div class="price">$35<span style="font-size: 0.9rem;">/year</span></div>
-                <div class="jvzoo-button">
-                    <a href="https://www.jvzoo.com/b/116509/439283/9">
-                        <img src="https://i.jvzoo.com/116509/439283/9" alt="Buy Valety on JVZoo" border="0" />
-                    </a>
-                </div>
-                <div class="benefits-list">
-                    <p>✅ 1-Month Free Trial Included</p>
-                    <p>✅ Single License Key</p>
-                    <p>✅ Auto-updates & Support</p>
-                </div>
+            <div class="video-label">
+                🎬 Technical validation & comparison workflow
             </div>
 
-            <!-- Team Plan -->
-            <div class="promo-box" style="border: 2px solid #3b82f6;">
-                <div class="team-badge">FIRM SOLUTIONS</div>
-                <h2>Team Plan</h2>
-                <div class="price">$30<span style="font-size: 0.9rem;">/user/year</span></div>
-                <p style="font-size: 0.7rem; color: #475569; margin-bottom: 1rem;">(Min. 10 Users Required)</p>
-                <a href="mailto:valety.subscription@gmail.com?subject=Valety%20Team%20Quote%20Request" class="btn-quote">📩 Request Team Quote</a>
-                <div class="benefits-list" style="margin-top: 1rem;">
-                    <p>✓ Centralized License Mgmt</p>
-                    <p>✓ Priority Engineering Support</p>
-                    <p>✓ Custom Corporate Invoicing</p>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="pricing-column">
+
+            <div class="pricing-box">
+
+                <h2>Individual License</h2>
+
+                <div class="price">
+                    $149 <small>/ year</small>
                 </div>
+
+                <p style="color:#64748b;font-size:0.9rem;">
+                    Designed for individual engineers and technical reviewers.
+                </p>
+
+                <a href="https://www.jvzoo.com/b/116509/439283/9" class="buy-btn">
+                    Start Technical Validation
+                </a>
+
+                <div class="benefits">
+                    <p>✅ Local-first architecture</p>
+                    <p>✅ BYOK AI providers</p>
+                    <p>✅ Automatic updates</p>
+                    <p>✅ Technical support</p>
+                </div>
+
             </div>
+
+            <div class="pricing-box featured">
+
+                <h2>Engineering Teams</h2>
+
+                <div class="price">
+                    $99 <small>/ user / year</small>
+                </div>
+
+                <p style="color:#64748b;font-size:0.9rem;">
+                    Minimum 5 users • Built for engineering firms & consultants.
+                </p>
+
+                <a href="mailto:valety.subscription@gmail.com?subject=Valety%20Team%20Inquiry"
+                   class="quote-btn">
+                    Request Team Quote
+                </a>
+
+                <div class="benefits">
+                    <p>✓ Centralized deployment</p>
+                    <p>✓ Priority support</p>
+                    <p>✓ Enterprise onboarding</p>
+                    <p>✓ Corporate invoicing</p>
+                </div>
+
+            </div>
+
         </div>
+
     </div>
 
-    <!-- Data Insights Section -->
-    <div class="data-insights">
-        <div class="section-title">📊 Trusted engineering data intelligence</div>
-        <div class="stats-grid">
-            <div class="stat-item"><div class="stat-number">98.6%</div><div class="stat-label">Validation accuracy</div></div>
-            <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">User-defined AI Persona</div></div>
-            <div class="stat-item"><div class="stat-number">2.5s</div><div class="stat-label">QA query response</div></div>
-            <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">On-prem / private</div></div>
-        </div>
-        <div style="text-align: center; margin-top: 1.8rem; font-size: 0.75rem;">🔍 Full audit trail · Version comparison · Real-time compliance mapping</div>
-    </div>
+    <!-- WHAT VALETY DETECTS -->
+    <section class="section">
 
-<section class="contact-section">
-        <h2>Technical Support & Inquiries</h2>
-        <p>For license activation, technical assistance, or multi-user enterprise deployments, please contact our engineering support team directly.</p>
-        
-        <a href="mailto:valety.subscription@gmail.com" class="email-link">
-            valety.subscription@gmail.com
-        </a>
-        
-        <p style="margin-top: 1.5rem; font-size: 0.85rem;">
-            Response Time: Typically within 24 hours (Business Days)
+        <div class="section-title">
+            What Valety Detects
+        </div>
+
+        <p class="section-subtitle">
+            Built specifically for engineering review workflows and technical submission analysis.
         </p>
+
+        <div class="grid-3">
+
+            <div class="grid-card">
+                <h3>⚠️ Missing Scope</h3>
+                <p>
+                    Detect omitted requirements, incomplete deliverables,
+                    and scope gaps before approval.
+                </p>
+            </div>
+
+            <div class="grid-card">
+                <h3>📌 Hidden Exclusions</h3>
+                <p>
+                    Identify contractor exclusions and assumptions buried inside submissions.
+                </p>
+            </div>
+
+            <div class="grid-card">
+                <h3>🔄 Revision Changes</h3>
+                <p>
+                    Compare revisions and detect specification changes,
+                    deleted items, and responsibility shifts.
+                </p>
+            </div>
+
+            <div class="grid-card">
+                <h3>📋 Compliance Gaps</h3>
+                <p>
+                    Validate submissions against specifications,
+                    standards, and employer requirements.
+                </p>
+            </div>
+
+            <div class="grid-card">
+                <h3>🧩 Responsibility Shifts</h3>
+                <p>
+                    Detect wording that transfers responsibilities
+                    between parties and disciplines.
+                </p>
+            </div>
+
+            <div class="grid-card">
+                <h3>📄 Technical Deviations</h3>
+                <p>
+                    Identify specification conflicts, deviations,
+                    and incomplete compliance statements.
+                </p>
+            </div>
+
+        </div>
+
     </section>
 
-    <!-- Compliance Block -->
-    <div class="jvzoo-compliance-block">
-        <p><strong>Disclaimer:</strong> This product does not guarantee income or specific business success. Results depend on individual implementation and file quality.</p>
-        <p>This website is not part of the FaceBook website or FaceBook Inc. FACEBOOK is a trademark of FACEBOOK, Inc.</p>
-        <p><strong>Retailer Statement:</strong> JVZoo is the retailer of the products on this site. JVZoo® is a registered trademark of BBC Systems Inc., used by permission.</p>
+    <!-- USE CASES -->
+    <section class="section">
+
+        <div class="section-title">
+            Typical Engineering Workflows
+        </div>
+
+        <div class="grid-3">
+
+            <div class="grid-card">
+                <h3>🏗️ Proposal Comparison</h3>
+                <p>
+                    Compare contractor submissions and generate structured comparison matrices.
+                </p>
+            </div>
+
+            <div class="grid-card">
+                <h3>📘 Specification Validation</h3>
+                <p>
+                    Validate technical submissions against specifications and requirements.
+                </p>
+            </div>
+
+            <div class="grid-card">
+                <h3>📝 Technical Review Reports</h3>
+                <p>
+                    Generate professional DOCX reports with executive summaries and findings.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- STATS -->
+    <section class="section">
+
+        <div class="section-title">
+            Built for Real Engineering Workflows
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-card">
+                <div class="stat-number">70%+</div>
+                <div class="stat-label">
+                    Reduction in manual review effort
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">Minutes</div>
+                <div class="stat-label">
+                    To compare revisions & submissions
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">
+                    Local-first processing
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">DOCX</div>
+                <div class="stat-label">
+                    Professional engineering review reports
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <div class="contact-box">
+
+        <h2>Technical Support & Enterprise Inquiries</h2>
+
+        <p>
+            Contact us for engineering team deployments,
+            onboarding assistance, or enterprise licensing.
+        </p>
+
+        <a href="mailto:valety.subscription@gmail.com" class="contact-email">
+            valety.subscription@gmail.com
+        </a>
+
     </div>
 
-    <footer>
-        © 2026 VALETY | Valety AI Engineering — <a href="privacy.html">Privacy Policy</a>
-    </footer>
 </div>
 
+<footer>
+    © 2026 Valety — Engineering Review Intelligence Platform
+</footer>
+
 <script>
-    (function() {
+    (function () {
         const video = document.querySelector('video');
+
         if (video) {
             video.muted = true;
             video.playsInline = true;
-            video.play().catch(e => console.log("Autoplay blocked"));
+
+            video.play().catch(() => {
+                console.log("Autoplay blocked");
+            });
         }
     })();
 </script>
+
 </body>
 </html>
