@@ -511,33 +511,51 @@
         </div>
     </div>
             <div class="pricing-box featured">
+    <h2>Engineering Teams</h2>
+    
+    <div class="price">
+        $49 <small>/ user / year</small>
+    </div>
 
-                <h2>Engineering Teams</h2>
+    <p style="color:#64748b;font-size:0.9rem; margin-bottom: 15px;">
+        Minimum 5 users. Enter your team size below:
+    </p>
 
-                <div class="price">
-                    $49 <small>/ user / year</small>
-                </div>
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; justify-content: center;">
+        <label for="user-count" style="font-weight: 600; font-size: 0.9rem;">Engineers:</label>
+        <input type="number" id="user-count" value="5" min="5" 
+               style="width: 70px; padding: 8px; border-radius: 8px; border: 1px solid #dbe7f0; font-family: inherit; font-weight: 700; text-align: center;">
+    </div>
 
-                <p style="color:#64748b;font-size:0.9rem;">
-                    Minimum 5 users • Built for engineering firms & consultants.
-                </p>
+    <a id="team-checkout-btn" href="https://valety.gumroad.com/l/Team?quantity=5&wanted=true" class="quote-btn">
+        Get Master License
+    </a>
 
-                <a href="mailto:valety.subscription@gmail.com?subject=Valety%20Team%20Inquiry"
-                   class="quote-btn">
-                    Request Team Quote
-                </a>
+    <div class="benefits" style="margin-top: 20px;">
+        <p>✓ One master key for all engineers</p>
+        <p>✓ Priority onboarding</p>
+        <p>✓ Corporate invoicing</p>
+        <p style="font-size:0.8rem;color:#64748b;margin-top:10px;">
+            AI usage billed separately through your own provider, or you can use your preferred AI free tier.
+        </p>
+    </div>
+</div>
 
-                <div class="benefits">
-                    <p>✓ Centralized deployment</p>
-                    <p>✓ Priority support</p>
-                    <p>✓ Enterprise onboarding</p>
-                    <p>✓ Corporate invoicing</p>
-                      <p style="font-size:0.8rem;color:#64748b;margin-top:10px;">
-AI usage billed separately through your own provider, or you can use your prefered AI free teir.
-</p>
-                </div>
+<script>
+    (function() {
+        const userCountInput = document.getElementById('user-count');
+        const teamBtn = document.getElementById('team-checkout-btn');
+        const teamBaseUrl = "https://valety.gumroad.com/l/Team";
 
-            </div>
+        if (userCountInput && teamBtn) {
+            userCountInput.addEventListener('input', function() {
+                let val = parseInt(this.value);
+                if (isNaN(val) || val < 5) val = 5;
+                teamBtn.href = `${teamBaseUrl}?quantity=${val}&wanted=true`;
+            });
+        }
+    })();
+</script>
 
         </div>
 
