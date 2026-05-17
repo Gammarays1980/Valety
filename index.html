@@ -343,10 +343,24 @@
 
         footer {
             border-top: 1px solid #e2e8f0;
-            padding: 24px;
+            padding: 30px 24px;
             text-align: center;
             color: #64748b;
-            font-size: 0.78rem;
+            font-size: 0.85rem;
+        }
+
+        .footer-affiliate-link {
+            display: block;
+            margin-bottom: 12px;
+            color: #2563eb;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-affiliate-link:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
         }
 
         @media(max-width: 1100px) {
@@ -430,7 +444,6 @@
 
     <div class="main-grid">
 
-        <!-- LEFT -->
         <div class="feature-column">
 
             <div class="card">
@@ -467,7 +480,6 @@
 
         </div>
 
-        <!-- CENTER -->
         <div>
 
             <div class="video-wrapper">
@@ -482,102 +494,101 @@
 
         </div>
 
-        <!-- RIGHT -->
-<div class="pricing-column">
+        <div class="pricing-column">
 
-    <div class="pricing-box">
-        <h2>Individual License</h2>
+            <div class="pricing-box">
+                <h2>Individual License</h2>
 
-        <div class="price">
-            $79 <small>/ year</small>
-        </div>
+                <div class="price">
+                    $79 <small>/ year</small>
+                </div>
 
-        <p style="color:#64748b;font-size:0.9rem;">
-            Designed for individual engineers and technical reviewers.
-        </p>
+                <p style="color:#64748b;font-size:0.9rem;">
+                    Designed for individual engineers and technical reviewers.
+                </p>
 
-        <a href="https://whop.com/checkout/plan_YAeo2CKiTb1tl" class="buy-btn">
-            Start Technical Validation
-        </a>
+                <a href="https://whop.com/checkout/plan_YAeo2CKiTb1tl" class="buy-btn">
+                    Start Technical Validation
+                </a>
 
-        <div class="benefits">
-            <p>✅ Local-first architecture</p>
-            <p>✅ BYOK AI providers</p>
-            <p>✅ Automatic updates</p>
-            <p>✅ Technical support</p>
-            <p style="font-size:0.8rem;color:#64748b;margin-top:10px;">
-                AI usage billed separately through your own provider, or you can use your preferred AI free tier.
-            </p>
-        </div>
-    </div>
+                <div class="benefits">
+                    <p>✅ Local-first architecture</p>
+                    <p>✅ BYOK AI providers</p>
+                    <p>✅ Automatic updates</p>
+                    <p>✅ Technical support</p>
+                    <p style="font-size:0.8rem;color:#64748b;margin-top:10px;">
+                        AI usage billed separately through your own provider, or you can use your preferred AI free tier.
+                    </p>
+                </div>
+            </div>
+
             <div class="pricing-box featured">
-    <h2>Engineering Teams</h2>
-    
-    <div class="price">
-        $49 <small>/ user / year</small>
-    </div>
+                <h2>Engineering Teams</h2>
+                
+                <div class="price">
+                    $49 <small>/ user / year</small>
+                </div>
 
-    <p style="color:#64748b;font-size:0.9rem; margin-bottom: 15px;">
-        Multi-seat packages. Select your team size below:
-    </p>
+                <p style="color:#64748b;font-size:0.9rem; margin-bottom: 15px;">
+                    Multi-seat packages. Select your team size below:
+                </p>
 
-    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; justify-content: center;">
-        <label for="user-count" style="font-weight: 600; font-size: 0.9rem;">Seats:</label>
-        <select id="user-count" 
-               style="width: 100px; padding: 8px; border-radius: 8px; border: 1px solid #dbe7f0; font-family: inherit; font-weight: 700; text-align: center; cursor: pointer; background: white; color: #0f172a;">
-            <option value="5">5 Seats</option>
-            <option value="10">10 Seats</option>
-            <option value="15">15 Seats</option>
-            <option value="20">20 Seats</option>
-            <option value="25">25 Seats</option>
-            <option value="50">50 Seats</option>
-        </select>
-    </div>
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; justify-content: center;">
+                    <label for="user-count" style="font-weight: 600; font-size: 0.9rem;">Seats:</label>
+                    <select id="user-count" 
+                           style="width: 100px; padding: 8px; border-radius: 8px; border: 1px solid #dbe7f0; font-family: inherit; font-weight: 700; text-align: center; cursor: pointer; background: white; color: #0f172a;">
+                        <option value="5">5 Seats</option>
+                        <option value="10">10 Seats</option>
+                        <option value="15">15 Seats</option>
+                        <option value="20">20 Seats</option>
+                        <option value="25">25 Seats</option>
+                        <option value="50">50 Seats</option>
+                    </select>
+                </div>
 
-    <a id="team-checkout-btn" href="https://whop.com/checkout/plan_8JiL7CEqIzy4j" class="quote-btn">
-        Get Master License
-    </a>
+                <a id="team-checkout-btn" href="https://whop.com/checkout/plan_8JiL7CEqIzy4j" class="quote-btn">
+                    Get Master License
+                </a>
 
-    <div class="benefits" style="margin-top: 20px;">
-        <p>✓ One master key for all engineers</p>
-        <p>✓ Priority onboarding</p>
-        <p>✓ Corporate invoicing</p>
-        <p style="font-size:0.8rem;color:#64748b;margin-top:10px;">
-            AI usage billed separately through your own provider, or you can use your preferred AI free tier.
-        </p>
-    </div>
-</div>
+                <div class="benefits" style="margin-top: 20px;">
+                    <p>✓ One master key for all engineers</p>
+                    <p>✓ Priority onboarding</p>
+                    <p>✓ Corporate invoicing</p>
+                    <p style="font-size:0.8rem;color:#64748b;margin-top:10px;">
+                        AI usage billed separately through your own provider, or you can use your preferred AI free tier.
+                    </p>
+                </div>
+            </div>
 
-<script>
-    (function() {
-        const userCountSelect = document.getElementById('user-count');
-        const teamBtn = document.getElementById('team-checkout-btn');
-        
-        const whopLinks = {
-            "5":  "https://whop.com/checkout/plan_8JiL7CEqIzy4j",
-            "10": "https://whop.com/checkout/plan_GPmE5ChE9YTW5",
-            "15": "https://whop.com/checkout/plan_nQE356bjDUxyp",
-            "20": "https://whop.com/checkout/plan_hJYQxKMo8rOvV",
-            "25": "https://whop.com/checkout/plan_6yMZVtKrOFSvm",
-            "50": "https://whop.com/checkout/plan_wta94i0vVVYc2"
-        };
+            <script>
+                (function() {
+                    const userCountSelect = document.getElementById('user-count');
+                    const teamBtn = document.getElementById('team-checkout-btn');
+                    
+                    const whopLinks = {
+                        "5":  "https://whop.com/checkout/plan_8JiL7CEqIzy4j",
+                        "10": "https://whop.com/checkout/plan_GPmE5ChE9YTW5",
+                        "15": "https://whop.com/checkout/plan_nQE356bjDUxyp",
+                        "20": "https://whop.com/checkout/plan_hJYQxKMo8rOvV",
+                        "25": "https://whop.com/checkout/plan_6yMZVtKrOFSvm",
+                        "50": "https://whop.com/checkout/plan_wta94i0vVVYc2"
+                    };
 
-        if (userCountSelect && teamBtn) {
-            userCountSelect.addEventListener('change', function() {
-                const selectedTier = this.value;
-                if (whopLinks[selectedTier]) {
-                    teamBtn.href = whopLinks[selectedTier];
-                }
-            });
-        }
-    })();
-</script>
+                    if (userCountSelect && teamBtn) {
+                        userCountSelect.addEventListener('change', function() {
+                            const selectedTier = this.value;
+                            if (whopLinks[selectedTier]) {
+                                teamBtn.href = whopLinks[selectedTier];
+                            }
+                        });
+                    }
+                })();
+            </script>
 
         </div>
 
     </div>
 
-    <!-- WHAT VALETY DETECTS -->
     <section class="section">
 
         <div class="section-title">
@@ -641,7 +652,6 @@
 
     </section>
 
-    <!-- USE CASES -->
     <section class="section">
 
         <div class="section-title">
@@ -675,7 +685,6 @@
 
     </section>
 
-    <!-- STATS -->
     <section class="section">
 
         <div class="section-title">
@@ -716,7 +725,6 @@
 
     </section>
 
-    <!-- CONTACT -->
     <div class="contact-box">
 
         <h2>Technical Support & Enterprise Inquiries</h2>
@@ -735,6 +743,9 @@
 </div>
 
 <footer>
+    <a href="https://whop.com/valety/affiliates" target="_blank" rel="noopener noreferrer" class="footer-affiliate-link">
+        💼 Become an Affiliate Partner & Earn 30% Commission
+    </a>
     © 2026 Valety — Engineering Review Intelligence Platform
 </footer>
 
