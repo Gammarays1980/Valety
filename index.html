@@ -483,7 +483,7 @@
         </div>
 
         <!-- RIGHT -->
-       <div class="pricing-column">
+<div class="pricing-column">
 
     <div class="pricing-box">
         <h2>Individual License</h2>
@@ -496,7 +496,7 @@
             Designed for individual engineers and technical reviewers.
         </p>
 
-        <a href="https://valety.gumroad.com/l/individual?wanted=true" class="buy-btn">
+        <a href="https://whop.com/checkout/plan_YAeo2CKiTb1tl" class="buy-btn">
             Start Technical Validation
         </a>
 
@@ -518,16 +518,23 @@
     </div>
 
     <p style="color:#64748b;font-size:0.9rem; margin-bottom: 15px;">
-        Minimum 5 users. Enter your team size below:
+        Multi-seat packages. Select your team size below:
     </p>
 
     <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px; justify-content: center;">
         <label for="user-count" style="font-weight: 600; font-size: 0.9rem;">Seats:</label>
-        <input type="number" id="user-count" value="5" min="5" 
-               style="width: 70px; padding: 8px; border-radius: 8px; border: 1px solid #dbe7f0; font-family: inherit; font-weight: 700; text-align: center;">
+        <select id="user-count" 
+               style="width: 100px; padding: 8px; border-radius: 8px; border: 1px solid #dbe7f0; font-family: inherit; font-weight: 700; text-align: center; cursor: pointer; background: white; color: #0f172a;">
+            <option value="5">5 Seats</option>
+            <option value="10">10 Seats</option>
+            <option value="15">15 Seats</option>
+            <option value="20">20 Seats</option>
+            <option value="25">25 Seats</option>
+            <option value="50">50 Seats</option>
+        </select>
     </div>
 
-    <a id="team-checkout-btn" href="https://valety.gumroad.com/l/Team?quantity=5&wanted=true" class="quote-btn">
+    <a id="team-checkout-btn" href="https://whop.com/checkout/plan_8JiL7CEqIzy4j" class="quote-btn">
         Get Master License
     </a>
 
@@ -543,15 +550,24 @@
 
 <script>
     (function() {
-        const userCountInput = document.getElementById('user-count');
+        const userCountSelect = document.getElementById('user-count');
         const teamBtn = document.getElementById('team-checkout-btn');
-        const teamBaseUrl = "https://valety.gumroad.com/l/Team";
+        
+        const whopLinks = {
+            "5":  "https://whop.com/checkout/plan_8JiL7CEqIzy4j",
+            "10": "https://whop.com/checkout/plan_GPmE5ChE9YTW5",
+            "15": "https://whop.com/checkout/plan_nQE356bjDUxyp",
+            "20": "https://whop.com/checkout/plan_hJYQxKMo8rOvV",
+            "25": "https://whop.com/checkout/plan_6yMZVtKrOFSvm",
+            "50": "https://whop.com/checkout/plan_wta94i0vVVYc2"
+        };
 
-        if (userCountInput && teamBtn) {
-            userCountInput.addEventListener('input', function() {
-                let val = parseInt(this.value);
-                if (isNaN(val) || val < 5) val = 5;
-                teamBtn.href = `${teamBaseUrl}?quantity=${val}&wanted=true`;
+        if (userCountSelect && teamBtn) {
+            userCountSelect.addEventListener('change', function() {
+                const selectedTier = this.value;
+                if (whopLinks[selectedTier]) {
+                    teamBtn.href = whopLinks[selectedTier];
+                }
             });
         }
     })();
